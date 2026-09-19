@@ -561,7 +561,7 @@
     `;
 
     return card;
-  }, { passive: true });
+  }
 
   // --- SEARCH ENGINE ---
   let debounceTimeout = null;
