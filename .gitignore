@@ -1,0 +1,8 @@
+audit_screenshots/
+*.log
+test_*.py
+test_*.js
+check_*.py
+clean_*.py
+capture_*.js
+audit_runner.js

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="theme-color" content="#501018">
+  <meta name="description" content="Karumbur Biryani - Authentic Royal Arcot Woodfire Dum Biryani Since 1978. Dine-In QR Menu.">
+  <title>Karumbur Biryani — Dine-In Menu</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="menu-app-container">
+    
+    <!-- TOP HERITAGE HEADER / BRANDING -->
+    <header class="restaurant-header">
+      <div class="header-top-ribbon">
+        <span class="heritage-year">ESTD. 1978</span>
+        <span class="ribbon-divider">•</span>
+        <span class="table-badge" id="tableBadge">
+          <svg class="table-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 6h16M4 18h16M8 6v12M16 6v12"/>
+          </svg>
+          TABLE 07
+        </span>
+        <span class="ribbon-divider">•</span>
+        <span class="service-mode">DINE-IN MENU</span>
+      </div>
+
+      <div class="restaurant-brand-crest">
+        <div class="crest-ornament left-ornament">
+          <svg viewBox="0 0 40 12" fill="none">
+            <path d="M0 6h25M25 6c3 0 5-3 8-3s4 3 7 3" stroke="#B37D2C" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="28" cy="6" r="1.5" fill="#B37D2C"/>
+          </svg>
+        </div>
+        
+        <div class="crest-emblem">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L6 8v9c0 6.5 4.3 12.5 10 14 5.7-1.5 10-7.5 10-14V8L16 2z" fill="#501018" stroke="#B37D2C" stroke-width="1.5"/>
+            <path d="M16 8v15M10 14h12" stroke="#FAF7F2" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="16" cy="7" r="1.5" fill="#B37D2C"/>
+          </svg>
+        </div>
+
+        <div class="crest-ornament right-ornament">
+          <svg viewBox="0 0 40 12" fill="none">
+            <path d="M40 6H15M15 6c-3 0-5-3-8-3s-4 3-7 3" stroke="#B37D2C" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="12" cy="6" r="1.5" fill="#B37D2C"/>
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="restaurant-title">KARUMBUR BIRYANI</h1>
+      <p class="restaurant-tamil-subtitle">கரும்பூர் பாரம்பரிய தம் பிரியாணி</p>
+      <p class="restaurant-tagline">Authentic Arcot Woodfire Dum • Pure Ghee & Seeraga Samba</p>
+
+      <!-- QUICK DIETARY BADGES BAR -->
+      <div class="header-badges">
+        <span class="pill-note">Woodfire Embers</span>
+        <span class="badge-dot">•</span>
+        <span class="pill-note">100% Halal</span>
+        <span class="badge-dot">•</span>
+        <span class="pill-note">No MSG</span>
+        <span class="badge-dot">•</span>
+        <span class="pill-note">Natural Spices</span>
+      </div>
+    </header>
+
+    <!-- STICKY SEARCH & CATEGORY BAR WRAPPER -->
+    <div class="sticky-nav-bar" id="stickyNavBar">
+      
+      <!-- SEARCH CONTROL -->
+      <div class="search-section">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input 
+            type="search" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search dishes, mutton, spices, dalcha..." 
+            autocomplete="off"
+            aria-label="Search restaurant menu"
+          >
+          <button type="button" id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- FILTER TOGGLES (ALL / VEG / NON-VEG / SIGNATURE) -->
+      <div class="filter-pills-row" role="tablist" aria-label="Dietary filters">
+        <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">
+          All Dishes
+        </button>
+        <button type="button" class="filter-pill" data-filter="non-veg" role="tab" aria-selected="false">
+          <span class="fssai-indicator non-veg mini"></span> Non-Veg
+        </button>
+        <button type="button" class="filter-pill" data-filter="veg" role="tab" aria-selected="false">
+          <span class="fssai-indicator veg mini"></span> Pure Veg
+        </button>
+        <button type="button" class="filter-pill" data-filter="signature" role="tab" aria-selected="false">
+          ★ Chef's Special
+        </button>
+      </div>
+
+      <!-- HORIZONTAL SCROLLABLE CATEGORY NAVIGATION -->
+      <nav class="category-nav-track" id="categoryNavTrack" aria-label="Menu categories">
+        <a href="#cat-biryani" class="cat-nav-tab active" data-cat="cat-biryani">Dum Biryani</a>
+        <a href="#cat-starters" class="cat-nav-tab" data-cat="cat-starters">Starters & Kebabs</a>
+        <a href="#cat-curries" class="cat-nav-tab" data-cat="cat-curries">Curries & Dalcha</a>
+        <a href="#cat-breads" class="cat-nav-tab" data-cat="cat-breads">Parottas & Breads</a>
+        <a href="#cat-desserts" class="cat-nav-tab" data-cat="cat-desserts">Mithai & Desserts</a>
+        <a href="#cat-beverages" class="cat-nav-tab" data-cat="cat-beverages">Beverages</a>
+      </nav>
+    </div>
+
+    <!-- MAIN MENU CONTENT LIST -->
+    <main class="menu-sections-container" id="menuContainer">
+      <!-- Content populated dynamically via app.js with instant fallback -->
+      <noscript>
+        <div class="no-js-warning">
+          Please enable JavaScript to view the interactive Karumbur Biryani Dine-In menu.
+        </div>
+      </noscript>
+    </main>
+
+    <!-- FOOTER WITH DINE-IN SERVICE NOTES -->
+    <footer class="restaurant-footer">
+      <div class="footer-divider-crest">
+        <span class="crest-line"></span>
+        <span class="crest-diamond">❖</span>
+        <span class="crest-line"></span>
+      </div>
+
+      <div class="footer-brand-statement">
+        <h3>KARUMBUR BIRYANI</h3>
+        <p class="footer-tagline">Traditional Woodfire Dum Cooking Since 1978</p>
+      </div>
+
+      <div class="dine-in-notice-card">
+        <div class="notice-item">
+          <span class="notice-icon">♨</span>
+          <p><strong>Fresh Preparation:</strong> Every dum pot is unsealed fresh upon dining hours. Please allow 10-15 mins for specialty roasts.</p>
+        </div>
+        <div class="notice-item">
+          <span class="notice-icon">⚖</span>
+          <p><strong>Allergy & Dietary:</strong> Inform our service staff before ordering if you have nut or dairy sensitivities.</p>
+        </div>
+        <div class="notice-item">
+          <span class="notice-icon">✓</span>
+          <p><strong>Taxes & Service:</strong> Government GST applicable as per rules. We do not levy mandatory service charges.</p>
+        </div>
+      </div>
+
+      <div class="service-timings">
+        <p class="timing-title">DINE-IN HOURS</p>
+        <p class="timing-detail">Lunch: 11:30 AM – 04:00 PM</p>
+        <p class="timing-detail">Dinner: 07:00 PM – 11:00 PM</p>
+      </div>
+
+      <p class="table-captain-prompt">
+        <span>To order, please signal your Table Captain.</span>
+      </p>
+
+      <div class="copyright-row">
+        <p>© 1978 - 2026 Karumbur Biryani. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- FOOD DETAIL BOTTOM SHEET / MODAL -->
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+      <div 
+        class="detail-bottom-sheet" 
+        id="detailBottomSheet" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-labelledby="modalDishTitle"
+      >
+        <!-- DRAG HANDLE FOR MOBILE TOUCH -->
+        <div class="sheet-drag-handle-zone" id="dragHandleZone">
+          <div class="sheet-drag-pill"></div>
+        </div>
+
+        <!-- CLOSE BUTTON -->
+        <button type="button" class="sheet-close-btn" id="modalCloseBtn" aria-label="Close dish details">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- MODAL BODY CONTENT (Rendered dynamically) -->
+        <div class="sheet-scroll-body" id="modalContentBody">
+          <!-- Dynamic Content Injected Here -->
+        </div>
+
+        <!-- BOTTOM DINE-IN CALLOUT (NO CART / NO CHECKOUT) -->
+        <div class="sheet-footer-notice">
+          <div class="footer-table-tip">
+            <svg class="waiter-bell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span>Dine-In Selection • Please inform your server to order</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+
+</body>
+</html>

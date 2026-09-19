@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karumbur Biryani — Table 07 QR Stand Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-paper: #FAF7F2;
+      --brand-maroon: #4E0E15;
+      --brand-maroon-dark: #35070C;
+      --accent-gold: #B37D2C;
+      --accent-gold-light: #D49D48;
+      --text-dark: #231C18;
+      --text-muted: #5C4F45;
+      --border-warm: #E2D3C4;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #260609;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    /* Print Table Stand Card Container */
+    .table-stand-card {
+      width: 100%;
+      max-width: 380px;
+      background-color: var(--bg-paper);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(179, 125, 44, 0.35);
+      border: 2px solid var(--accent-gold);
+      position: relative;
+    }
+
+    /* Top Regal Header */
+    .card-top-header {
+      background: linear-gradient(180deg, #4E0E15 0%, #35070C 100%);
+      color: #FAF7F2;
+      padding: 22px 20px 18px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 2px solid var(--accent-gold);
+    }
+
+    .table-number-ribbon {
+      display: inline-block;
+      background: rgba(179, 125, 44, 0.22);
+      border: 1px solid var(--accent-gold-light);
+      padding: 3px 12px;
+      border-radius: 4px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #FFF2DC;
+      margin-bottom: 10px;
+    }
+
+    .brand-crest-emblem {
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 6px auto;
+    }
+
+    .brand-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #FFF8EE;
+      line-height: 1.15;
+    }
+
+    .brand-tamil {
+      font-family: 'Marcellus', serif;
+      font-size: 0.82rem;
+      color: var(--accent-gold-light);
+      margin-top: 4px;
+    }
+
+    .brand-tagline {
+      font-size: 0.72rem;
+      color: rgba(250, 247, 242, 0.85);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Middle QR Display Body */
+    .card-qr-body {
+      padding: 24px 20px;
+      text-align: center;
+      background: radial-gradient(circle at center, #FFFDFB 0%, #FAF7F2 100%);
+    }
+
+    .scan-prompt-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--brand-maroon);
+      margin-bottom: 4px;
+    }
+
+    .scan-prompt-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* QR Code Frame with Gold Hairline */
+    .qr-frame-box {
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 16px auto;
+      background: #FFFFFF;
+      border: 2px solid var(--accent-gold);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 4px 14px rgba(78, 14, 21, 0.1);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-code-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .qr-url-text {
+      font-family: monospace;
+      font-size: 0.74rem;
+      color: var(--brand-maroon);
+      background-color: #F3ECE1;
+      padding: 5px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      word-break: break-all;
+      border: 1px dashed var(--border-warm);
+      margin-bottom: 14px;
+    }
+
+    /* Step-by-step Dining Instructions */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+      background-color: #FFFDF9;
+      border: 1px solid var(--border-warm);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-dark);
+    }
+
+    .step-num {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: var(--brand-maroon);
+      color: #FFF;
+      font-size: 0.65rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Bottom Hospitality Footer */
+    .card-bottom-footer {
+      background-color: #35070C;
+      color: #FAF7F2;
+      padding: 12px 16px;
+      text-align: center;
+      font-size: 0.70rem;
+      border-top: 1px solid var(--accent-gold);
+    }
+
+    .footer-server-note {
+      font-weight: 600;
+      color: var(--accent-gold-light);
+    }
+
+    /* Action Toolbar (Controls outside printed card) */
+    .toolbar-panel {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 380px;
+      width: 100%;
+    }
+
+    .tool-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid var(--accent-gold);
+    }
+
+    .tool-btn-primary {
+      background-color: var(--accent-gold);
+      color: #231C18;
+    }
+
+    .tool-btn-primary:hover {
+      background-color: var(--accent-gold-light);
+    }
+
+    .tool-btn-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #FAF7F2;
+    }
+
+    .tool-btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* URL Configurator Box */
+    .url-config-box {
+      margin-top: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(179, 125, 44, 0.3);
+      border-radius: 8px;
+      padding: 12px;
+      width: 100%;
+      max-width: 380px;
+      color: #FAF7F2;
+    }
+
+    .url-config-box label {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--accent-gold-light);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .url-input-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .url-input {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--accent-gold);
+      background: #FFF;
+      color: #231C18;
+      font-size: 0.78rem;
+    }
+
+    .update-qr-btn {
+      padding: 6px 12px;
+      background: var(--accent-gold);
+      color: #231C18;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.74rem;
+      cursor: pointer;
+    }
+
+    /* Print Mode Styles */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .toolbar-panel, .url-config-box {
+        display: none !important;
+      }
+      .table-stand-card {
+        box-shadow: none;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- RESTAURANT DINE-IN TABLE TENT CARD -->
+  <main class="table-stand-card" id="standCard">
+    <div class="card-top-header">
+      <div class="table-number-ribbon">TABLE NO. 07</div>
+      
+      <svg class="brand-crest-emblem" viewBox="0 0 32 32" fill="none">
+        <path d="M16 2L6 8v9c0 6.5 4.3 12.5 10 14 5.7-1.5 10-7.5 10-14V8L16 2z" fill="#35070C" stroke="#B37D2C" stroke-width="1.5"/>
+        <path d="M16 8v15M10 14h12" stroke="#FAF7F2" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="16" cy="7" r="1.5" fill="#B37D2C"/>
+      </svg>
+
+      <h1 class="brand-name">KARUMBUR BIRYANI</h1>
+      <p class="brand-tamil">கரும்பூர் பாரம்பரிய தம் பிரியாணி</p>
+      <p class="brand-tagline">Authentic Arcot Woodfire Dum • Since 1978</p>
+    </div>
+
+    <div class="card-qr-body">
+      <h2 class="scan-prompt-title">SCAN FOR DINE-IN MENU</h2>
+      <p class="scan-prompt-subtitle">Point your phone camera at the QR code below</p>
+
+      <div class="qr-frame-box">
+        <img 
+          src="karumbur_menu_qr.png" 
+          alt="Karumbur Biryani Table 07 Menu QR Code" 
+          class="qr-code-image"
+          id="qrCodeImg"
+        >
+      </div>
+
+      <div class="qr-url-text" id="displayUrlText">http://10.3.208.223:54321/index.html</div>
+
+      <div class="steps-list">
+        <div class="step-item">
+          <span class="step-num">1</span>
+          <span>Open Camera or Google Lens on your phone</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">2</span>
+          <span>Tap notification link to view live menu & dishes</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">3</span>
+          <span>Inform your Table Captain to place your order</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-bottom-footer">
+      <p class="footer-server-note">Prepared Fresh in Woodfire Dum Pots • Strictly Dine-In</p>
+      <p>© 1978 - 2026 Karumbur Biryani • Pure Ghee & Natural Spices</p>
+    </div>
+  </main>
+
+  <!-- ACTION TOOLBAR -->
+  <div class="toolbar-panel">
+    <a href="index.html" class="tool-btn tool-btn-primary" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+      Open Menu Directly
+    </a>
+    <button type="button" class="tool-btn tool-btn-secondary" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 6 2 18 2 18 9"/>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+        <rect x="6" y="14" width="12" height="8"/>
+      </svg>
+      Print Table Card
+    </button>
+  </div>
+
+  <!-- QR URL CONFIGURATOR -->
+  <div class="url-config-box">
+    <label for="customUrlInput">Target Menu URL for QR Code:</label>
+    <div class="url-input-row">
+      <input type="url" id="customUrlInput" class="url-input" value="http://10.3.208.223:54321/index.html">
+      <button type="button" class="update-qr-btn" id="updateQrBtn">Update QR</button>
+    </div>
+  </div>
+
+  <script>
+    const urlInput = document.getElementById('customUrlInput');
+    const updateBtn = document.getElementById('updateQrBtn');
+    const qrImg = document.getElementById('qrCodeImg');
+    const displayUrl = document.getElementById('displayUrlText');
+
+    updateBtn.addEventListener('click', () => {
+      const newUrl = urlInput.value.trim();
+      if (!newUrl) return;
+      displayUrl.textContent = newUrl;
+      const encoded = encodeURIComponent(newUrl);
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=${encoded}&margin=20&format=png`;
+    });
+  </script>
+</body>
+</html>

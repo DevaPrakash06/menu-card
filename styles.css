@@ -1,0 +1,1171 @@
+/* ==========================================================================
+   KARUMBUR BIRYANI — DINE-IN QR MENU DESIGN SYSTEM
+   Visual Direction: Warm Ivory • Deep Maroon • Burnished Gold • Authentic Heritage
+   Primary Reference Viewport: 390px Mobile Viewport
+   Audited for: 360px, 375px, 390px, 393px, 412px, 430px
+   ========================================================================== */
+
+:root {
+  /* Warm Ivory & Natural Paper Palette */
+  --bg-page: #FAF7F2;
+  --bg-card: #FFFDF9;
+  --bg-card-hover: #F8F2E8;
+  --bg-subtle: #F3ECE1;
+  --bg-tinted: #F6EFE3;
+  --bg-category-track: #F3EBE0;
+
+  /* Royal Heritage Maroon & Spiced Gold Accents */
+  --brand-maroon: #4E0E15;
+  --brand-maroon-dark: #35070C;
+  --brand-maroon-light: #6C1923;
+  --accent-gold: #B37D2C;
+  --accent-gold-light: #D49D48;
+  --accent-gold-soft: rgba(179, 125, 44, 0.12);
+  --accent-spice: #8A2A16;
+  
+  /* Text & Ink Shades (High Legibility on Ivory) */
+  --text-primary: #231C18;
+  --text-secondary: #5C4F45;
+  --text-tertiary: #84756A;
+  --text-on-maroon: #FAF7F2;
+
+  /* Subtle Warm Hairline Borders (Physical Paper Edge Feel) */
+  --border-light: #E8DED1;
+  --border-medium: #D6C6B3;
+  --border-gold: rgba(179, 125, 44, 0.4);
+
+  /* FSSAI Standard Compliant Indicators */
+  --color-veg: #15803D;
+  --color-nonveg: #991B1B;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px rgba(35, 28, 24, 0.04);
+  --shadow-card: 0 2px 5px rgba(50, 20, 10, 0.04), 0 1px 2px rgba(50, 20, 10, 0.02);
+  --shadow-sticky: 0 4px 12px rgba(45, 14, 18, 0.07);
+  --shadow-modal: 0 -8px 25px rgba(25, 8, 10, 0.22);
+
+  /* Typography */
+  --font-serif-brand: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-serif-sub: 'Marcellus', 'Cinzel', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Mobile Spacing Variables (Defaults for 390px PRIMARY reference) */
+  --px-mobile: 14px;
+  --radius-card: 10px;
+  --radius-thumb: 8px;
+  --thumb-size: 82px;
+}
+
+/* Base Reset & Fluid Responsive Layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  display: flex;
+  justify-content: center;
+}
+
+/* App container: 100% full width on mobile, centered gracefully on desktop */
+.menu-app-container {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   1. HERO & TOP RESTAURANT BRANDING (Compact, Regal, No Vertical Bloat)
+   ========================================================================== */
+.restaurant-header {
+  background: linear-gradient(180deg, #480C13 0%, #35070C 100%);
+  color: var(--text-on-maroon);
+  padding: 10px var(--px-mobile) 10px var(--px-mobile);
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+.restaurant-header::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold-light), transparent);
+}
+
+.header-top-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold-light);
+  margin-bottom: 4px;
+}
+
+.ribbon-divider {
+  opacity: 0.5;
+  color: var(--accent-gold);
+}
+
+.table-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(179, 125, 44, 0.22);
+  border: 1px solid rgba(217, 162, 77, 0.45);
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #FFF2DC;
+}
+
+.table-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.restaurant-brand-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 2px 0 3px 0;
+}
+
+.crest-ornament {
+  width: 32px;
+  height: 8px;
+  opacity: 0.85;
+}
+
+.crest-emblem {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restaurant-title {
+  font-family: var(--font-serif-brand);
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FFF9F0;
+  margin: 0;
+  line-height: 1.15;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.restaurant-tamil-subtitle {
+  font-family: var(--font-serif-sub);
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  color: var(--accent-gold-light);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.restaurant-tagline {
+  font-size: 0.70rem;
+  color: rgba(250, 247, 242, 0.85);
+  margin-top: 3px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.header-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.pill-note {
+  font-size: 0.65rem;
+  color: #E6D4BE;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.badge-dot {
+  font-size: 0.60rem;
+  color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   2. STICKY SEARCH & HORIZONTAL CATEGORY NAVIGATION
+   ========================================================================== */
+.sticky-nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: var(--bg-page);
+  border-bottom: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-sticky);
+}
+
+/* Search Bar Section */
+.search-section {
+  padding: 8px var(--px-mobile) 6px var(--px-mobile);
+  background-color: var(--bg-page);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(179, 125, 44, 0.16);
+}
+
+.search-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  margin-right: 7px;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clear-search-btn {
+  width: 44px; /* Accessible 44px touch target */
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: -8px;
+}
+
+.clear-search-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Dietary Quick Filters (All / Non-Veg / Pure Veg / Chef's Special) */
+.filter-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px var(--px-mobile) 8px var(--px-mobile);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--bg-page);
+}
+
+.filter-pills-row::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  border-radius: 16px;
+  border: 1px solid var(--border-medium);
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.filter-pill.active {
+  background-color: var(--brand-maroon);
+  color: #FFFDF9;
+  border-color: var(--brand-maroon);
+  box-shadow: 0 2px 5px rgba(78, 14, 21, 0.22);
+}
+
+/* Category Navigation Track */
+.category-nav-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 var(--px-mobile);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--bg-category-track);
+  border-top: 1px solid var(--border-light);
+}
+
+.category-nav-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-nav-tab {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 40px; /* Accessible touch height */
+  font-family: var(--font-serif-sub);
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: color 0.18s ease;
+  white-space: nowrap;
+}
+
+.cat-nav-tab:hover {
+  color: var(--brand-maroon);
+}
+
+.cat-nav-tab.active {
+  color: var(--brand-maroon);
+  font-weight: 700;
+}
+
+.cat-nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background-color: var(--brand-maroon);
+  border-radius: 2px 2px 0 0;
+}
+
+/* ==========================================================================
+   3. MENU SECTIONS & COMPACT RESTAURANT MENU CARDS
+   ========================================================================== */
+.menu-sections-container {
+  flex: 1;
+  padding: 12px var(--px-mobile) 24px var(--px-mobile);
+}
+
+.category-block {
+  margin-bottom: 22px;
+  scroll-margin-top: 132px; /* Offset for sticky bar */
+}
+
+.category-header {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.category-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.category-title {
+  font-family: var(--font-serif-brand);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--brand-maroon);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.category-ornament-mark {
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+}
+
+.category-count {
+  font-family: var(--font-body);
+  font-size: 0.70rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+.category-subtitle {
+  font-size: 0.73rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  font-style: italic;
+  font-family: var(--font-serif-sub);
+}
+
+/* Card List */
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+/* Compact Physical Restaurant Menu Card */
+.menu-card {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  padding: 10px 10px 10px 11px;
+  gap: 10px;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  position: relative;
+  outline: none;
+  min-height: 94px;
+}
+
+.menu-card:hover, .menu-card:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(50, 20, 10, 0.08);
+  border-color: var(--border-medium);
+}
+
+.menu-card:active {
+  transform: scale(0.99);
+}
+
+/* Left Content Column */
+.card-details-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0; /* Prevents overflow & allows text ellipsis */
+}
+
+.card-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-bottom: 2px;
+}
+
+/* FSSAI Compliant Veg / Non-Veg Indicator */
+.fssai-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background-color: #FFFDF9;
+}
+
+.fssai-indicator.non-veg {
+  border: 1.5px solid var(--color-nonveg);
+}
+
+.fssai-indicator.non-veg::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-nonveg);
+}
+
+.fssai-indicator.veg {
+  border: 1.5px solid var(--color-veg);
+}
+
+.fssai-indicator.veg::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-veg);
+}
+
+.fssai-indicator.mini {
+  width: 11px;
+  height: 11px;
+  border-width: 1.2px;
+  margin-top: 0;
+}
+
+.fssai-indicator.mini::after {
+  width: 5px;
+  height: 5px;
+}
+
+.dish-name-heading {
+  font-family: var(--font-serif-brand);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.signature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: rgba(179, 125, 44, 0.12);
+  color: #8A5E1C;
+  border: 1px solid rgba(179, 125, 44, 0.28);
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 2px;
+  width: fit-content;
+}
+
+.dish-tamil-alias {
+  font-family: var(--font-serif-sub);
+  font-size: 0.69rem;
+  color: var(--text-tertiary);
+  margin-bottom: 3px;
+}
+
+.dish-desc-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.36;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.card-bottom-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.price-container {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.currency-sym {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--brand-maroon);
+}
+
+.price-val {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--brand-maroon);
+  letter-spacing: -0.01em;
+}
+
+.portion-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-left: 2px;
+}
+
+.spice-meter-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  font-size: 0.66rem;
+  color: var(--accent-spice);
+  font-weight: 600;
+}
+
+/* Right Food Thumbnail Image (Fixed, Non-Stretched) */
+.card-media-col {
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  min-width: var(--thumb-size);
+  min-height: var(--thumb-size);
+  max-width: var(--thumb-size);
+  max-height: var(--thumb-size);
+  flex-shrink: 0;
+  position: relative;
+  border-radius: var(--radius-thumb);
+  overflow: hidden;
+  border: 1px solid rgba(179, 125, 44, 0.22);
+  background: #EFE4D6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23B37D2C' stroke-width='1' opacity='0.3'%3E%3Cpath d='M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'/%3E%3C/svg%3E") no-repeat center center;
+}
+
+.card-food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.menu-card:hover .card-food-img {
+  transform: scale(1.03);
+}
+
+/* Empty Search / Filter State */
+.empty-menu-state {
+  text-align: center;
+  padding: 36px 16px;
+  background-color: var(--bg-card);
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-card);
+  margin-top: 10px;
+}
+
+.empty-menu-state svg {
+  width: 38px;
+  height: 38px;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+}
+
+.empty-title {
+  font-family: var(--font-serif-brand);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-maroon);
+  margin-bottom: 5px;
+}
+
+.empty-desc {
+  font-size: 0.80rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.reset-search-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--brand-maroon);
+  font-weight: 600;
+  font-size: 0.80rem;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ==========================================================================
+   4. FOOD DETAIL BOTTOM SHEET (DINE-IN MODAL)
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(26, 8, 10, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, visibility 0.22s;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.detail-bottom-sheet {
+  width: 100%;
+  max-width: 440px;
+  max-height: 86vh;
+  background-color: var(--bg-card);
+  border-radius: 18px 18px 0 0;
+  box-shadow: var(--shadow-modal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translateY(100%);
+  transition: transform 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  border-top: 2px solid var(--accent-gold);
+}
+
+.modal-backdrop.open .detail-bottom-sheet {
+  transform: translateY(0);
+}
+
+.sheet-drag-handle-zone {
+  width: 100%;
+  padding: 8px 0 4px 0;
+  display: flex;
+  justify-content: center;
+  cursor: grab;
+  touch-action: none;
+}
+
+.sheet-drag-pill {
+  width: 36px;
+  height: 4px;
+  background-color: var(--border-medium);
+  border-radius: 3px;
+}
+
+.sheet-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 44px; /* Accessible 44px touch target */
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background-color: rgba(255, 253, 249, 0.94);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+
+.sheet-close-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sheet-scroll-body {
+  overflow-y: auto;
+  padding: 0 var(--px-mobile) 14px var(--px-mobile);
+  -webkit-overflow-scrolling: touch;
+}
+
+.sheet-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-medium);
+  background-color: #EFE4D6;
+}
+
+.sheet-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sheet-photo-overlay {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.sheet-header-meta {
+  margin-bottom: 10px;
+}
+
+.sheet-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.sheet-title {
+  font-family: var(--font-serif-brand);
+  font-size: 1.20rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.sheet-tamil-title {
+  font-family: var(--font-serif-sub);
+  font-size: 0.84rem;
+  color: var(--accent-gold);
+  margin-top: 2px;
+}
+
+.sheet-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 7px 10px;
+  background-color: var(--bg-tinted);
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+}
+
+.sheet-price-amount {
+  font-family: var(--font-body);
+  font-size: 1.20rem;
+  font-weight: 700;
+  color: var(--brand-maroon);
+}
+
+.sheet-portion-badge {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Dum & Preparation Story */
+.sheet-section {
+  margin-top: 12px;
+}
+
+.sheet-section-title {
+  font-family: var(--font-serif-brand);
+  font-size: 0.80rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--brand-maroon);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.sheet-desc-para {
+  font-size: 0.80rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Ingredients & Spice Tags */
+.ingredients-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.ingredient-chip {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 0.70rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Dietary & Allergen Badges */
+.allergen-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.allergen-pill {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background-color: #F8ECE8;
+  color: #8C2D19;
+  border: 1px solid #E6CAC2;
+}
+
+.allergen-pill.safe {
+  background-color: #ECF5EE;
+  color: #166534;
+  border-color: #C2E0C7;
+}
+
+/* Modal Dine-In Waiter Callout (NO CART / NO ORDERING) */
+.sheet-footer-notice {
+  background: linear-gradient(180deg, #F8EFE4 0%, #EFE3D3 100%);
+  border-top: 1px solid var(--border-medium);
+  padding: 10px var(--px-mobile);
+  text-align: center;
+}
+
+.footer-table-tip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--brand-maroon);
+}
+
+.waiter-bell-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   5. RESTAURANT FOOTER
+   ========================================================================== */
+.restaurant-footer {
+  background-color: #35070C;
+  color: #FAF7F2;
+  padding: 20px var(--px-mobile) calc(24px + env(safe-area-inset-bottom)) var(--px-mobile);
+  text-align: center;
+  border-top: 2px solid var(--accent-gold);
+}
+
+.footer-divider-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.crest-line {
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold));
+}
+
+.crest-line:last-child {
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+.crest-diamond {
+  color: var(--accent-gold-light);
+  font-size: 0.80rem;
+}
+
+.footer-brand-statement h3 {
+  font-family: var(--font-serif-brand);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  color: #FFF6E6;
+  margin-bottom: 2px;
+}
+
+.footer-tagline {
+  font-family: var(--font-serif-sub);
+  font-size: 0.73rem;
+  color: var(--accent-gold-light);
+  margin-bottom: 14px;
+}
+
+.dine-in-notice-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(179, 125, 44, 0.25);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.notice-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 0.72rem;
+  color: #E2D3C4;
+  line-height: 1.38;
+  margin-bottom: 7px;
+}
+
+.notice-item:last-child {
+  margin-bottom: 0;
+}
+
+.notice-icon {
+  color: var(--accent-gold-light);
+  font-size: 0.80rem;
+  line-height: 1.2;
+}
+
+.service-timings {
+  margin-bottom: 12px;
+}
+
+.timing-title {
+  font-family: var(--font-serif-brand);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold-light);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.timing-detail {
+  font-size: 0.73rem;
+  color: #D9C9BA;
+}
+
+.table-captain-prompt {
+  background: rgba(179, 125, 44, 0.16);
+  border: 1px dashed rgba(217, 162, 77, 0.5);
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  color: #FFF2DC;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.copyright-row {
+  font-size: 0.66rem;
+  color: #A38F80;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE VIEWPORT FINE-TUNING (360px, 375px, 390px, 393px, 412px, 430px)
+   ========================================================================== */
+
+/* 360px Viewport (Galaxy A, compact screens) */
+@media (max-width: 365px) {
+  :root {
+    --px-mobile: 10px;
+    --thumb-size: 74px;
+  }
+
+  .restaurant-title {
+    font-size: 1.20rem;
+    letter-spacing: 0.05em;
+  }
+
+  .restaurant-tagline {
+    font-size: 0.65rem;
+  }
+
+  .dish-name-heading {
+    font-size: 0.84rem;
+  }
+
+  .price-val {
+    font-size: 0.96rem;
+  }
+
+  .menu-card {
+    padding: 8px 8px 8px 9px;
+    gap: 8px;
+    min-height: 88px;
+  }
+
+  .header-top-ribbon {
+    gap: 5px;
+    font-size: 0.65rem;
+  }
+
+  .filter-pill {
+    padding: 0 8px;
+    font-size: 0.68rem;
+  }
+}
+
+/* 375px Viewport (iPhone SE / iPhone mini) */
+@media (min-width: 366px) and (max-width: 385px) {
+  :root {
+    --px-mobile: 12px;
+    --thumb-size: 78px;
+  }
+
+  .restaurant-title {
+    font-size: 1.28rem;
+  }
+}
+
+/* 390px - 393px Viewports (PRIMARY REFERENCE - iPhone 12/13/14/15, Pixel 7/8) */
+@media (min-width: 386px) and (max-width: 405px) {
+  :root {
+    --px-mobile: 14px;
+    --thumb-size: 82px;
+  }
+}
+
+/* 412px - 430px Viewports (Galaxy S-series, Pixel Pro, iPhone Pro Max) */
+@media (min-width: 406px) {
+  :root {
+    --px-mobile: 16px;
+    --thumb-size: 86px;
+  }
+
+  .dish-name-heading {
+    font-size: 0.94rem;
+  }
+
+  .price-val {
+    font-size: 1.08rem;
+  }
+
+  .restaurant-title {
+    font-size: 1.44rem;
+    letter-spacing: 0.10em;
+  }
+}
