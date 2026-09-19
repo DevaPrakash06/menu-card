@@ -6,43 +6,42 @@
    ========================================================================== */
 
 :root {
-  /* Warm Ivory & Natural Paper Palette */
-  --bg-page: #FAF7F2;
-  --bg-card: #FFFDF9;
-  --bg-card-hover: #F8F2E8;
-  --bg-subtle: #F3ECE1;
-  --bg-tinted: #F6EFE3;
-  --bg-category-track: #F3EBE0;
+  /* Warm Ivory & Fine Natural Paper Palette */
+  --bg-page: #FBF8F4;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FCFAF6;
+  --bg-subtle: #F4ECE1;
+  --bg-tinted: #F7EFE4;
+  --bg-category-track: #F6EFE5;
 
   /* Royal Heritage Maroon & Spiced Gold Accents */
-  --brand-maroon: #4E0E15;
-  --brand-maroon-dark: #35070C;
-  --brand-maroon-light: #6C1923;
-  --accent-gold: #B37D2C;
-  --accent-gold-light: #D49D48;
-  --accent-gold-soft: rgba(179, 125, 44, 0.12);
-  --accent-spice: #8A2A16;
+  --brand-maroon: #4E0C13;
+  --brand-maroon-dark: #320509;
+  --brand-maroon-light: #721520;
+  --accent-gold: #C08D38;
+  --accent-gold-light: #E2B868;
+  --accent-gold-soft: rgba(192, 141, 56, 0.12);
+  --accent-spice: #9A2C18;
   
-  /* Text & Ink Shades (High Legibility on Ivory) */
-  --text-primary: #231C18;
-  --text-secondary: #5C4F45;
+  /* Text & Ink Shades (High Contrast & Legibility on Ivory) */
+  --text-primary: #1C1512;
+  --text-secondary: #52443B;
   --text-tertiary: #84756A;
   --text-on-maroon: #FAF7F2;
 
   /* Subtle Warm Hairline Borders (Physical Paper Edge Feel) */
-  --border-light: #E8DED1;
-  --border-medium: #D6C6B3;
-  --border-gold: rgba(179, 125, 44, 0.4);
+  --border-light: #ECE2D4;
+  --border-medium: #D9C8B4;
+  --border-gold: rgba(192, 141, 56, 0.35);
 
   /* FSSAI Standard Compliant Indicators */
-  --color-veg: #15803D;
+  --color-veg: #16803C;
   --color-nonveg: #991B1B;
 
   /* Elevation Shadows */
-  --shadow-sm: 0 1px 2px rgba(35, 28, 24, 0.04);
-  --shadow-card: 0 2px 5px rgba(50, 20, 10, 0.04), 0 1px 2px rgba(50, 20, 10, 0.02);
-  --shadow-sticky: 0 4px 12px rgba(45, 14, 18, 0.07);
-  --shadow-modal: 0 -8px 25px rgba(25, 8, 10, 0.22);
+  --shadow-sm: 0 1px 3px rgba(35, 20, 15, 0.04);
+  --shadow-card: 0 2px 8px rgba(45, 18, 12, 0.05), 0 1px 3px rgba(45, 18, 12, 0.02);
+  --shadow-sticky: 0 4px 14px rgba(40, 10, 15, 0.06);
 
   /* Typography */
   --font-serif-brand: 'Cinzel', Georgia, 'Times New Roman', serif;
@@ -51,9 +50,9 @@
 
   /* Mobile Spacing Variables (Defaults for 390px PRIMARY reference) */
   --px-mobile: 14px;
-  --radius-card: 10px;
-  --radius-thumb: 8px;
-  --thumb-size: 82px;
+  --radius-card: 12px;
+  --radius-thumb: 10px;
+  --thumb-size: 88px;
 }
 
 /* Base Reset & Fluid Responsive Layout */
@@ -102,13 +101,26 @@ body {
   flex-direction: column;
 }
 
+@media (min-width: 500px) {
+  body {
+    background-color: #ECE3D7;
+    padding: 24px 0;
+  }
+  .menu-app-container {
+    border-radius: 18px;
+    overflow: clip;
+    box-shadow: 0 16px 45px rgba(35, 10, 15, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border-medium);
+  }
+}
+
 /* ==========================================================================
    1. HERO & TOP RESTAURANT BRANDING (Compact, Regal, No Vertical Bloat)
    ========================================================================== */
 .restaurant-header {
-  background: linear-gradient(180deg, #480C13 0%, #35070C 100%);
+  background: linear-gradient(135deg, #4E0C13 0%, #2D0509 100%);
   color: var(--text-on-maroon);
-  padding: 10px var(--px-mobile) 10px var(--px-mobile);
+  padding: 12px var(--px-mobile) 10px var(--px-mobile);
   text-align: center;
   position: relative;
   border-bottom: 2px solid var(--accent-gold);
@@ -129,35 +141,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 0.70rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-gold-light);
   margin-bottom: 4px;
-}
-
-.ribbon-divider {
-  opacity: 0.5;
-  color: var(--accent-gold);
-}
-
-.table-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(179, 125, 44, 0.22);
-  border: 1px solid rgba(217, 162, 77, 0.45);
-  padding: 1px 7px;
-  border-radius: 4px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #FFF2DC;
-}
-
-.table-icon {
-  width: 12px;
-  height: 12px;
 }
 
 .restaurant-brand-crest {
@@ -184,9 +173,9 @@ body {
 
 .restaurant-title {
   font-family: var(--font-serif-brand);
-  font-size: 1.32rem;
+  font-size: 1.34rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   color: #FFF9F0;
   margin: 0;
   line-height: 1.15;
@@ -195,40 +184,22 @@ body {
 
 .restaurant-tamil-subtitle {
   font-family: var(--font-serif-sub);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   letter-spacing: 0.03em;
   color: var(--accent-gold-light);
-  margin-top: 2px;
+  margin-top: 3px;
   font-weight: 500;
 }
 
 .restaurant-tagline {
-  font-size: 0.70rem;
-  color: rgba(250, 247, 242, 0.85);
+  font-size: 0.65rem;
+  color: rgba(250, 247, 242, 0.88);
   margin-top: 3px;
   font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
-.header-badges {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 6px;
-}
-
-.pill-note {
-  font-size: 0.65rem;
-  color: #E6D4BE;
-  font-weight: 500;
   letter-spacing: 0.02em;
-}
-
-.badge-dot {
-  font-size: 0.60rem;
-  color: var(--accent-gold);
+  white-space: normal;
+  line-height: 1.35;
+  padding: 0 8px;
 }
 
 /* ==========================================================================
@@ -244,6 +215,7 @@ body {
 }
 
 /* Search Bar Section */
+/* Search Bar Section */
 .search-section {
   padding: 8px var(--px-mobile) 6px var(--px-mobile);
   background-color: var(--bg-page);
@@ -255,23 +227,24 @@ body {
   align-items: center;
   background-color: var(--bg-card);
   border: 1px solid var(--border-medium);
-  border-radius: 8px;
+  border-radius: 20px;
   height: 40px;
-  padding: 0 10px;
+  padding: 0 12px;
+  box-shadow: 0 1px 3px rgba(35, 20, 15, 0.04);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .search-input-wrapper:focus-within {
   border-color: var(--accent-gold);
-  box-shadow: 0 0 0 2px rgba(179, 125, 44, 0.16);
+  box-shadow: 0 0 0 2px rgba(192, 141, 56, 0.20);
 }
 
 .search-icon {
   width: 17px;
   height: 17px;
-  color: var(--text-tertiary);
+  color: var(--accent-gold);
   flex-shrink: 0;
-  margin-right: 7px;
+  margin-right: 8px;
 }
 
 .search-input {
@@ -280,14 +253,14 @@ body {
   border: none;
   background: transparent;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-primary);
   outline: none;
 }
 
 .search-input::placeholder {
   color: var(--text-tertiary);
-  font-size: 0.82rem;
+  font-size: 0.80rem;
 }
 
 .search-input::-webkit-search-cancel-button {
@@ -295,8 +268,8 @@ body {
 }
 
 .clear-search-btn {
-  width: 44px; /* Accessible 44px touch target */
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border: none;
   background: transparent;
   color: var(--text-secondary);
@@ -304,12 +277,12 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin-right: -8px;
+  margin-right: -4px;
 }
 
 .clear-search-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
 }
 
 /* Dietary Quick Filters (All / Non-Veg / Pure Veg / Chef's Special) */
@@ -341,12 +314,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  min-height: 32px;
-  padding: 0 10px;
+  height: 30px;
+  padding: 0 11px;
   font-size: 0.72rem;
   font-weight: 600;
   font-family: var(--font-body);
-  border-radius: 16px;
+  border-radius: 15px;
   border: 1px solid var(--border-medium);
   background-color: var(--bg-card);
   color: var(--text-secondary);
@@ -358,20 +331,27 @@ body {
   background-color: var(--brand-maroon);
   color: #FFFDF9;
   border-color: var(--brand-maroon);
-  box-shadow: 0 2px 5px rgba(78, 14, 21, 0.22);
+  box-shadow: 0 2px 6px rgba(78, 12, 19, 0.25);
 }
 
 /* Category Navigation Track */
+.category-nav-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-category-track);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-medium);
+}
+
 .category-nav-track {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 0 var(--px-mobile);
+  gap: 8px;
+  padding: 7px var(--px-mobile);
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  background-color: var(--bg-category-track);
-  border-top: 1px solid var(--border-light);
+  background-color: transparent;
   touch-action: pan-x pan-y;
   user-select: none;
   -webkit-user-select: none;
@@ -392,36 +372,32 @@ body {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  height: 40px; /* Accessible touch height */
-  font-family: var(--font-serif-sub);
-  font-size: 0.83rem;
+  height: 32px;
+  padding: 0 13px;
+  font-family: var(--font-serif-brand);
+  font-size: 0.76rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
-  letter-spacing: 0.02em;
-  position: relative;
-  transition: color 0.18s ease;
+  letter-spacing: 0.04em;
+  border-radius: 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  transition: all 0.18s ease;
   white-space: nowrap;
 }
 
 .cat-nav-tab:hover {
   color: var(--brand-maroon);
+  border-color: var(--accent-gold);
 }
 
 .cat-nav-tab.active {
-  color: var(--brand-maroon);
+  background: linear-gradient(135deg, #540D16 0%, #38070E 100%);
+  color: #FFF9F0;
+  border-color: var(--accent-gold);
   font-weight: 700;
-}
-
-.cat-nav-tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2.5px;
-  background-color: var(--brand-maroon);
-  border-radius: 2px 2px 0 0;
+  box-shadow: 0 2px 7px rgba(78, 14, 21, 0.28);
 }
 
 /* ==========================================================================
@@ -429,63 +405,68 @@ body {
    ========================================================================== */
 .menu-sections-container {
   flex: 1;
-  padding: 12px var(--px-mobile) 24px var(--px-mobile);
+  padding: 14px var(--px-mobile) 24px var(--px-mobile);
   touch-action: pan-y;
 }
 
 .category-block {
-  margin-bottom: 22px;
-  scroll-margin-top: 132px; /* Offset for sticky bar */
+  margin-bottom: 26px;
+  scroll-margin-top: 135px; /* Offset for sticky bar */
 }
 
 .category-header {
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--border-medium);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--border-medium);
 }
 
 .category-title-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
 .category-title {
   font-family: var(--font-serif-brand);
-  font-size: 1.08rem;
+  font-size: 1.10rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--brand-maroon);
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
 
 .category-ornament-mark {
   color: var(--accent-gold);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
 }
 
 .category-count {
   font-family: var(--font-body);
-  font-size: 0.70rem;
-  font-weight: 600;
-  color: var(--text-tertiary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--brand-maroon-light);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-medium);
+  padding: 2px 8px;
+  border-radius: 12px;
 }
 
 .category-subtitle {
-  font-size: 0.73rem;
+  font-size: 0.74rem;
   color: var(--text-secondary);
-  margin-top: 2px;
+  margin-top: 3px;
   font-style: italic;
   font-family: var(--font-serif-sub);
+  line-height: 1.35;
 }
 
 /* Card List */
 .items-list {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 11px;
 }
 
 /* Compact Physical Restaurant Menu Card (View-Only) */
@@ -495,13 +476,19 @@ body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-card);
-  padding: 10px 10px 10px 11px;
-  gap: 10px;
+  padding: 12px 11px 11px 13px;
+  gap: 12px;
   box-shadow: var(--shadow-card);
   position: relative;
   outline: none;
-  min-height: 94px;
+  min-height: 96px;
   touch-action: pan-y;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card.chef-signature-card {
+  border-left: 3.5px solid var(--accent-gold);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%);
 }
 
 /* Left Content Column */
@@ -513,11 +500,15 @@ body {
   min-width: 0; /* Prevents overflow & allows text ellipsis */
 }
 
+.card-meta-top {
+  margin-bottom: 4px;
+}
+
 .card-title-row {
   display: flex;
   align-items: flex-start;
-  gap: 7px;
-  margin-bottom: 2px;
+  gap: 8px;
+  margin-bottom: 3px;
 }
 
 /* FSSAI Compliant Veg / Non-Veg Indicator */
@@ -571,41 +562,42 @@ body {
 
 .dish-name-heading {
   font-family: var(--font-serif-brand);
-  font-size: 0.88rem;
+  font-size: 0.90rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.25;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 .signature-chip {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
-  background-color: rgba(179, 125, 44, 0.12);
-  color: #8A5E1C;
-  border: 1px solid rgba(179, 125, 44, 0.28);
+  gap: 3px;
+  background: linear-gradient(135deg, rgba(192, 141, 56, 0.18) 0%, rgba(192, 141, 56, 0.08) 100%);
+  color: #7D5314;
+  border: 1px solid rgba(192, 141, 56, 0.35);
   font-size: 0.58rem;
   font-weight: 700;
-  padding: 1px 5px;
+  padding: 2px 6px;
   border-radius: 3px;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 2px;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
   width: fit-content;
 }
 
 .dish-tamil-alias {
   font-family: var(--font-serif-sub);
-  font-size: 0.69rem;
-  color: var(--text-tertiary);
-  margin-bottom: 3px;
+  font-size: 0.70rem;
+  color: #7A6657;
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .dish-desc-text {
   font-size: 0.75rem;
   color: var(--text-secondary);
-  line-height: 1.40;
+  line-height: 1.42;
   margin-bottom: 6px;
 }
 
@@ -614,12 +606,17 @@ body {
   align-items: baseline;
   justify-content: space-between;
   margin-top: auto;
+  padding-top: 2px;
 }
 
 .price-container {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
   gap: 2px;
+  background-color: var(--bg-tinted);
+  padding: 2px 7px;
+  border-radius: 5px;
+  border: 1px solid rgba(192, 141, 56, 0.24);
 }
 
 .currency-sym {
@@ -630,14 +627,14 @@ body {
 
 .price-val {
   font-family: var(--font-body);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--brand-maroon);
   letter-spacing: -0.01em;
 }
 
 .portion-tag {
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   font-weight: 600;
   color: var(--text-tertiary);
   margin-left: 2px;
@@ -646,10 +643,16 @@ body {
 .spice-meter-dots {
   display: inline-flex;
   align-items: center;
-  gap: 1px;
+  gap: 2px;
   font-size: 0.66rem;
   color: var(--accent-spice);
   font-weight: 600;
+}
+
+.spice-label-text {
+  font-size: 0.62rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
 }
 
 /* Right Food Thumbnail Image (Fixed, Non-Stretched) */
@@ -664,8 +667,9 @@ body {
   position: relative;
   border-radius: var(--radius-thumb);
   overflow: hidden;
-  border: 1px solid rgba(179, 125, 44, 0.22);
-  background: #EFE4D6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23B37D2C' stroke-width='1' opacity='0.3'%3E%3Cpath d='M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'/%3E%3C/svg%3E") no-repeat center center;
+  border: 1px solid rgba(192, 141, 56, 0.28);
+  box-shadow: 0 2px 6px rgba(45, 18, 12, 0.08);
+  background: #EFE4D6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C08D38' stroke-width='1' opacity='0.3'%3E%3Cpath d='M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'/%3E%3C/svg%3E") no-repeat center center;
 }
 
 .card-food-img {
@@ -673,11 +677,49 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.25s ease;
 }
 
-.menu-card:hover .card-food-img {
-  transform: scale(1.03);
+/* Floating Quick Jump / Top Button */
+.floating-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: calc(50% - 200px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #4E0C13 0%, #2D0509 100%);
+  color: #FFF9F0;
+  border: 1.5px solid var(--accent-gold);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-family: var(--font-serif-brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 16px rgba(50, 10, 15, 0.35);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (max-width: 440px) {
+  .floating-top-btn {
+    right: 16px;
+  }
+}
+
+.floating-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-top-btn svg {
+  width: 13px;
+  height: 13px;
 }
 
 /* Empty Search / Filter State */

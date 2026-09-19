@@ -1,6 +1,6 @@
 /**
  * KARUMBUR BIRYANI — DINE-IN QR MENU INTERACTIVE ENGINE
- * Authentic Arcot Heritage Dum Cuisine Since 1978
+ * Authentic Royal Arcot Heritage Woodfire Dum Cuisine
  * Strictly Dine-In (No Cart, No Checkout, No Online Ordering)
  */
 
@@ -512,13 +512,15 @@
   // Create Individual Menu Card (Clean View-Only Card)
   function createDishCard(dish) {
     const card = document.createElement('article');
-    card.className = 'menu-card';
+    card.className = `menu-card ${dish.isSignature ? 'chef-signature-card' : ''}`.trim();
     card.dataset.id = dish.id;
 
-    // Spice meter dots
+    // Spice meter dots with label
     let spiceHtml = '';
     if (dish.spiceLevel > 0) {
-      spiceHtml = `<span class="spice-meter-dots" title="Spice Level: ${dish.spiceLevel}/3">${'🌶️'.repeat(dish.spiceLevel)}</span>`;
+      const spiceLabels = { 1: 'Mild', 2: 'Medium', 3: 'Fiery' };
+      const spiceText = spiceLabels[dish.spiceLevel] || '';
+      spiceHtml = `<span class="spice-meter-dots" title="Spice Level: ${dish.spiceLevel}/3">${'🌶️'.repeat(dish.spiceLevel)} <span class="spice-label-text">${spiceText}</span></span>`;
     }
 
     // Signature chip
@@ -707,6 +709,26 @@
   const filterPillsRow = document.querySelector('.filter-pills-row');
   enhanceHorizontalScroll(categoryNavTrack);
   enhanceHorizontalScroll(filterPillsRow);
+
+  // --- FLOATING BACK TO TOP BUTTON ---
+  const floatingTopBtn = document.getElementById('floatingTopBtn');
+  if (floatingTopBtn) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (scrollY > 300) {
+        floatingTopBtn.classList.add('visible');
+      } else {
+        floatingTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    floatingTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 
   // --- UTILITY ---
   function escapeHTML(str) {
