@@ -420,10 +420,6 @@
   const clearSearchBtn = document.getElementById('clearSearchBtn');
   const filterButtons = document.querySelectorAll('.filter-pill');
   const categoryTabs = document.querySelectorAll('.cat-nav-tab');
-  const modalBackdrop = document.getElementById('modalBackdrop');
-  const modalContentBody = document.getElementById('modalContentBody');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const dragHandleZone = document.getElementById('dragHandleZone');
 
   // --- RENDER ENGINE ---
   function renderMenu() {
@@ -513,13 +509,10 @@
     setupScrollSpy();
   }
 
-  // Create Individual Menu Card
+  // Create Individual Menu Card (Clean View-Only Card)
   function createDishCard(dish) {
     const card = document.createElement('article');
     card.className = 'menu-card';
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', `View details for ${dish.name}, Price ₹${dish.price}`);
     card.dataset.id = dish.id;
 
     // Spice meter dots
@@ -567,161 +560,7 @@
       </div>
     `;
 
-    // Click and keyboard interaction to open bottom sheet
-    card.addEventListener('click', () => openBottomSheet(dish));
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openBottomSheet(dish);
-      }
-    });
-
     return card;
-  }
-
-  // --- FOOD DETAIL BOTTOM SHEET MODAL ---
-  function openBottomSheet(dish) {
-    let spiceText = 'Mild Spiced';
-    if (dish.spiceLevel === 2) spiceText = 'Medium Spiced';
-    if (dish.spiceLevel === 3) spiceText = 'Fiery Authentic Spice';
-
-    const ingredientsChips = dish.ingredients
-      .map(ing => `<span class="ingredient-chip">${escapeHTML(ing)}</span>`)
-      .join('');
-
-    const allergenPills = dish.allergens
-      .map(alg => `<span class="allergen-pill ${alg.includes('Free') || alg.includes('Halal') || alg.includes('Vegetarian') ? 'safe' : ''}">${escapeHTML(alg)}</span>`)
-      .join('');
-
-    modalContentBody.innerHTML = `
-      <div class="sheet-photo-wrapper">
-        <img 
-          src="${escapeHTML(dish.image)}" 
-          alt="${escapeHTML(dish.name)}" 
-          class="sheet-photo-img"
-          onerror="this.style.opacity='0.2';"
-        >
-        <div class="sheet-photo-overlay">
-          <span class="fssai-indicator ${dish.isVeg ? 'veg' : 'non-veg'}" style="background: white; border-radius: 3px; padding: 2px;"></span>
-          ${dish.isSignature ? '<span class="signature-chip" style="background: rgba(80,16,24,0.85); color: #FFF; border: none;">★ Chef Special</span>' : ''}
-        </div>
-      </div>
-
-      <div class="sheet-header-meta">
-        <div class="sheet-title-row">
-          <div>
-            <h2 class="sheet-title" id="modalDishTitle">${escapeHTML(dish.name)}</h2>
-            <p class="sheet-tamil-title">${escapeHTML(dish.tamil)}</p>
-          </div>
-        </div>
-
-        <div class="sheet-price-row">
-          <div>
-            <span class="sheet-price-amount">₹${dish.price}</span>
-            <span class="sheet-portion-badge">(${escapeHTML(dish.portion)})</span>
-          </div>
-          <div class="spice-meter-dots">
-            ${dish.spiceLevel > 0 ? '🌶️'.repeat(dish.spiceLevel) + ' ' + spiceText : 'Delicate Flavor'}
-          </div>
-        </div>
-      </div>
-
-      <div class="sheet-section">
-        <h4 class="sheet-section-title">The Heritage Recipe</h4>
-        <p class="sheet-desc-para">${escapeHTML(dish.story)}</p>
-      </div>
-
-      <div class="sheet-section">
-        <h4 class="sheet-section-title">Key Spices & Ingredients</h4>
-        <div class="ingredients-wrap">
-          ${ingredientsChips}
-        </div>
-      </div>
-
-      <div class="sheet-section">
-        <h4 class="sheet-section-title">Dietary & Allergen Notes</h4>
-        <div class="allergen-badges-row">
-          ${allergenPills}
-        </div>
-      </div>
-
-      <div class="sheet-section" style="margin-bottom: 8px;">
-        <h4 class="sheet-section-title">Chef's Serving Recommendation</h4>
-        <p class="sheet-desc-para" style="color: var(--accent-spice); font-weight: 500;">
-          ${escapeHTML(dish.pairing)}
-        </p>
-      </div>
-    `;
-
-    modalBackdrop.classList.add('open');
-    modalBackdrop.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
-    document.documentElement.style.overflow = 'hidden';
-    modalCloseBtn.focus();
-  }
-
-  function closeBottomSheet() {
-    modalBackdrop.classList.remove('open');
-    modalBackdrop.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-  }
-
-  // Ensure scroll is never locked on page navigation or reload
-  window.addEventListener('pageshow', () => {
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-  });
-
-  // Close handlers
-  modalCloseBtn.addEventListener('click', closeBottomSheet);
-  modalBackdrop.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) {
-      closeBottomSheet();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
-      closeBottomSheet();
-    }
-  });
-
-  // Drag down to close gesture on mobile
-  let startY = 0;
-  let currentY = 0;
-  let isDragging = false;
-  const bottomSheet = document.getElementById('detailBottomSheet');
-
-  dragHandleZone.addEventListener('touchstart', (e) => {
-    if (!modalBackdrop.classList.contains('open')) return;
-    startY = e.touches[0].clientY;
-    isDragging = true;
-  }, { passive: true });
-
-  window.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    currentY = e.touches[0].clientY;
-    const diff = currentY - startY;
-    if (diff > 0) {
-      bottomSheet.style.transform = `translateY(${diff}px)`;
-    }
-  }, { passive: true });
-
-  window.addEventListener('touchend', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    const diff = currentY - startY;
-    if (diff > 80) {
-      closeBottomSheet();
-    }
-    bottomSheet.style.transform = '';
-  }, { passive: true });
-
-  window.addEventListener('touchcancel', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    bottomSheet.style.transform = '';
   }, { passive: true });
 
   // --- SEARCH ENGINE ---
