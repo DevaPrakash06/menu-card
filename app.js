@@ -656,6 +656,7 @@
     modalBackdrop.classList.add('open');
     modalBackdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden'; // Prevent background scroll
+    document.documentElement.style.overflow = 'hidden';
     modalCloseBtn.focus();
   }
 
@@ -663,7 +664,14 @@
     modalBackdrop.classList.remove('open');
     modalBackdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   }
+
+  // Ensure scroll is never locked on page navigation or reload
+  window.addEventListener('pageshow', () => {
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  });
 
   // Close handlers
   modalCloseBtn.addEventListener('click', closeBottomSheet);
@@ -686,6 +694,7 @@
   const bottomSheet = document.getElementById('detailBottomSheet');
 
   dragHandleZone.addEventListener('touchstart', (e) => {
+    if (!modalBackdrop.classList.contains('open')) return;
     startY = e.touches[0].clientY;
     isDragging = true;
   }, { passive: true });
@@ -706,6 +715,12 @@
     if (diff > 80) {
       closeBottomSheet();
     }
+    bottomSheet.style.transform = '';
+  }, { passive: true });
+
+  window.addEventListener('touchcancel', () => {
+    if (!isDragging) return;
+    isDragging = false;
     bottomSheet.style.transform = '';
   }, { passive: true });
 
@@ -796,7 +811,8 @@
       if (targetSection) {
         // Calculate offset position for sticky nav
         const navOffset = 135;
-        const targetPos = targetSection.getBoundingClientRect().top + window.pageYOffset - navOffset;
+        const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+        const targetPos = targetSection.getBoundingClientRect().top + currentScroll - navOffset;
 
         window.scrollTo({
           top: targetPos,
@@ -807,6 +823,51 @@
       }
     });
   });
+
+  // --- HORIZONTAL TRACK SCROLL ENHANCEMENTS (MOUSE DRAG & WHEEL) ---
+  function enhanceHorizontalScroll(elem) {
+    if (!elem) return;
+
+    // Mouse wheel horizontal scroll (desktop mouse users)
+    elem.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        elem.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+
+    // Drag-to-scroll with mouse
+    let isDown = false;
+    let startX = 0;
+    let scrollLeftPos = 0;
+
+    elem.addEventListener('mousedown', (e) => {
+      isDown = true;
+      elem.classList.add('dragging');
+      startX = e.pageX - elem.offsetLeft;
+      scrollLeftPos = elem.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        elem.classList.remove('dragging');
+      }
+    });
+
+    elem.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - elem.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      elem.scrollLeft = scrollLeftPos - walk;
+    });
+  }
+
+  const categoryNavTrack = document.getElementById('categoryNavTrack');
+  const filterPillsRow = document.querySelector('.filter-pills-row');
+  enhanceHorizontalScroll(categoryNavTrack);
+  enhanceHorizontalScroll(filterPillsRow);
 
   // --- UTILITY ---
   function escapeHTML(str) {

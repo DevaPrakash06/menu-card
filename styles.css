@@ -75,7 +75,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -86,6 +86,9 @@ body {
   background-color: var(--bg-page);
   display: flex;
   justify-content: center;
+  overflow-x: clip;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* App container: 100% full width on mobile, centered gracefully on desktop */
@@ -95,7 +98,6 @@ body {
   min-height: 100vh;
   background-color: var(--bg-page);
   position: relative;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -320,10 +322,18 @@ body {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   background-color: var(--bg-page);
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
 }
 
 .filter-pills-row::-webkit-scrollbar {
   display: none;
+}
+
+.filter-pills-row.dragging {
+  cursor: grabbing;
 }
 
 .filter-pill {
@@ -362,10 +372,20 @@ body {
   -webkit-overflow-scrolling: touch;
   background-color: var(--bg-category-track);
   border-top: 1px solid var(--border-light);
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+  scroll-behavior: smooth;
 }
 
 .category-nav-track::-webkit-scrollbar {
   display: none;
+}
+
+.category-nav-track.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
 }
 
 .cat-nav-tab {
@@ -410,6 +430,7 @@ body {
 .menu-sections-container {
   flex: 1;
   padding: 12px var(--px-mobile) 24px var(--px-mobile);
+  touch-action: pan-y;
 }
 
 .category-block {
@@ -482,6 +503,7 @@ body {
   position: relative;
   outline: none;
   min-height: 94px;
+  touch-action: pan-y;
 }
 
 .menu-card:hover, .menu-card:focus-visible {
@@ -735,12 +757,14 @@ body {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.22s ease, visibility 0.22s;
 }
 
 .modal-backdrop.open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .detail-bottom-sheet {
