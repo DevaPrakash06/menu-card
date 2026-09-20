@@ -469,46 +469,45 @@ body {
   gap: 11px;
 }
 
-/* Compact Physical Restaurant Menu Card (View-Only) */
+/* Clean Luxury Photo-less Dine-In Restaurant Card */
 .menu-card {
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
   background-color: var(--bg-card);
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-card);
-  padding: 12px 11px 11px 13px;
-  gap: 12px;
-  box-shadow: var(--shadow-card);
+  border-radius: 12px;
+  padding: 13px 14px 11px 14px;
+  box-shadow: 0 1px 4px rgba(35, 20, 15, 0.04);
   position: relative;
   outline: none;
-  min-height: 96px;
   touch-action: pan-y;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.menu-card:hover {
+  border-color: rgba(192, 141, 56, 0.5);
+  box-shadow: 0 3px 10px rgba(78, 12, 19, 0.07);
 }
 
 .menu-card.chef-signature-card {
-  border-left: 3.5px solid var(--accent-gold);
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 100%);
+  border-left: 4px solid var(--accent-gold);
+  background: linear-gradient(180deg, #FFFDF9 0%, #FAF6EE 100%);
 }
 
-/* Left Content Column */
-.card-details-col {
-  flex: 1;
+.card-header-row {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  min-width: 0; /* Prevents overflow & allows text ellipsis */
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
-.card-meta-top {
-  margin-bottom: 4px;
-}
-
-.card-title-row {
+.card-title-meta {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  margin-bottom: 3px;
+  flex: 1;
+  min-width: 0;
 }
 
 /* FSSAI Compliant Veg / Non-Veg Indicator */
@@ -520,7 +519,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 3px;
   background-color: #FFFDF9;
 }
 
@@ -560,91 +559,102 @@ body {
   height: 5px;
 }
 
-.dish-name-heading {
-  font-family: var(--font-serif-brand);
-  font-size: 0.90rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.25;
-  letter-spacing: 0.02em;
+.dish-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
 }
 
-.signature-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  background: linear-gradient(135deg, rgba(192, 141, 56, 0.18) 0%, rgba(192, 141, 56, 0.08) 100%);
-  color: #7D5314;
-  border: 1px solid rgba(192, 141, 56, 0.35);
-  font-size: 0.58rem;
+.dish-name-heading {
+  font-family: var(--font-serif-brand);
+  font-size: 0.96rem;
   font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 3px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 3px;
-  width: fit-content;
+  color: var(--brand-maroon);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  margin: 0;
 }
 
 .dish-tamil-alias {
   font-family: var(--font-serif-sub);
-  font-size: 0.70rem;
+  font-size: 0.76rem;
   color: #7A6657;
-  margin-bottom: 4px;
   font-weight: 500;
+  line-height: 1.2;
+}
+
+.card-price-block {
+  display: flex;
+  align-items: baseline;
+  color: var(--brand-maroon);
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.10rem;
+  background-color: #FAF4E8;
+  border: 1px solid rgba(192, 141, 56, 0.28);
+  padding: 3px 9px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.card-price-block .currency-sym {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-right: 1px;
+}
+
+.signature-chip {
+  font-family: var(--font-serif-brand);
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #2E1B05;
+  background: linear-gradient(135deg, #DFC07A 0%, #C08D38 100%);
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(192, 141, 56, 0.25);
+  align-self: flex-start;
+  margin-top: 2px;
+  flex-shrink: 0;
+  text-transform: uppercase;
 }
 
 .dish-desc-text {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
-  line-height: 1.42;
-  margin-bottom: 6px;
+  line-height: 1.45;
+  margin: 4px 0 8px 0;
+  padding-left: 22px;
 }
 
-.card-bottom-row {
+.card-footer-meta {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  margin-top: auto;
-  padding-top: 2px;
-}
-
-.price-container {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 2px;
-  background-color: var(--bg-tinted);
-  padding: 2px 7px;
-  border-radius: 5px;
-  border: 1px solid rgba(192, 141, 56, 0.24);
-}
-
-.currency-sym {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--brand-maroon);
-}
-
-.price-val {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--brand-maroon);
-  letter-spacing: -0.01em;
+  gap: 8px;
+  padding-left: 22px;
+  border-top: 1px dashed rgba(226, 211, 196, 0.5);
+  padding-top: 5px;
 }
 
 .portion-tag {
-  font-size: 0.64rem;
-  font-weight: 600;
+  font-size: 0.68rem;
   color: var(--text-tertiary);
-  margin-left: 2px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-medium);
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-weight: 600;
 }
 
 .spice-meter-dots {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
-  font-size: 0.66rem;
+  gap: 3px;
+  font-size: 0.68rem;
   color: var(--accent-spice);
   font-weight: 600;
 }
@@ -655,29 +665,6 @@ body {
   font-weight: 500;
 }
 
-/* Right Food Thumbnail Image (Fixed, Non-Stretched) */
-.card-media-col {
-  width: var(--thumb-size);
-  height: var(--thumb-size);
-  min-width: var(--thumb-size);
-  min-height: var(--thumb-size);
-  max-width: var(--thumb-size);
-  max-height: var(--thumb-size);
-  flex-shrink: 0;
-  position: relative;
-  border-radius: var(--radius-thumb);
-  overflow: hidden;
-  border: 1px solid rgba(192, 141, 56, 0.28);
-  box-shadow: 0 2px 6px rgba(45, 18, 12, 0.08);
-  background: #EFE4D6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C08D38' stroke-width='1' opacity='0.3'%3E%3Cpath d='M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'/%3E%3C/svg%3E") no-repeat center center;
-}
-
-.card-food-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 /* Floating Quick Jump / Top Button */
 .floating-top-btn {

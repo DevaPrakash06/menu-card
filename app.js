@@ -1257,7 +1257,7 @@
     setupScrollSpy();
   }
 
-  // Create Individual Menu Card (Clean View-Only Card)
+  // Create Individual Menu Card (Clean Luxury Photo-less Dine-In Card)
   function createDishCard(dish) {
     const card = document.createElement('article');
     card.className = `menu-card ${dish.isSignature ? 'chef-signature-card' : ''}`.trim();
@@ -1277,36 +1277,26 @@
       : '';
 
     card.innerHTML = `
-      <div class="card-details-col">
-        <div>
-          <div class="card-title-row">
-            <span class="fssai-indicator ${dish.isVeg ? 'veg' : 'non-veg'}" aria-label="${dish.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}"></span>
+      <div class="card-header-row">
+        <div class="card-title-meta">
+          <span class="fssai-indicator ${dish.isVeg ? 'veg' : 'non-veg'}" aria-label="${dish.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}"></span>
+          <div class="dish-titles">
             <h3 class="dish-name-heading">${escapeHTML(dish.name)}</h3>
+            <span class="dish-tamil-alias">${escapeHTML(dish.tamil)}</span>
           </div>
           ${sigChip}
-          <p class="dish-tamil-alias">${escapeHTML(dish.tamil)}</p>
-          <p class="dish-desc-text">${escapeHTML(dish.desc)}</p>
         </div>
-
-        <div class="card-bottom-row">
-          <div class="price-container">
-            <span class="currency-sym">₹</span>
-            <span class="price-val">${dish.price}</span>
-            <span class="portion-tag">${escapeHTML(dish.portion)}</span>
-          </div>
-          ${spiceHtml}
+        <div class="card-price-block">
+          <span class="currency-sym">₹</span>
+          <span class="price-val">${dish.price}</span>
         </div>
       </div>
 
-      <div class="card-media-col">
-        <img 
-          src="${escapeHTML(dish.image)}" 
-          alt="${escapeHTML(dish.name)}" 
-          class="card-food-img" 
-          loading="lazy"
-          decoding="async"
-          onerror="this.style.opacity='0.3'; this.parentElement.style.backgroundColor='#EFE4D6';"
-        >
+      <p class="dish-desc-text">${escapeHTML(dish.desc)}</p>
+
+      <div class="card-footer-meta">
+        <span class="portion-tag">${escapeHTML(dish.portion)}</span>
+        ${spiceHtml}
       </div>
     `;
 
