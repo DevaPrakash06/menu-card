@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karumbur Biryani — Restaurant Menu Card & Table Stand</title>
   
-  <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,7 +24,6 @@
       --text-secondary: #5C4F45;
       --text-tertiary: #847568;
       --border-warm: #E2D3C4;
-      --border-gold: rgba(192, 141, 56, 0.4);
       --veg-green: #15803D;
       --non-veg-maroon: #991B1B;
       --font-brand: 'Cinzel', Georgia, serif;
@@ -47,19 +45,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px 60px 16px;
+      padding: 20px 16px 60px 16px;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* TOP APPLICATION TOOLBAR (HIDDEN IN PRINT) */
     .top-toolbar {
       width: 100%;
-      max-width: 860px;
+      max-width: 900px;
       background: linear-gradient(135deg, rgba(78, 12, 19, 0.95), rgba(50, 5, 9, 0.98));
       border: 1px solid var(--accent-gold);
       border-radius: 12px;
-      padding: 14px 20px;
-      margin-bottom: 24px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -145,7 +142,6 @@
       background: rgba(192, 141, 56, 0.15);
     }
 
-    /* URL Configurator in Toolbar */
     .url-config-row {
       width: 100%;
       display: flex;
@@ -185,33 +181,30 @@
       cursor: pointer;
     }
 
-    /* ==========================================================================
-       VIEW 1: COMPLETE PHYSICAL RESTAURANT MENU CARD (A4 / SPREAD)
-       ========================================================================== */
+    /* FULL MENU CARD DOCUMENT */
     .menu-card-document {
       width: 100%;
-      max-width: 860px;
+      max-width: 900px;
       background-color: var(--bg-paper);
       border-radius: 12px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
       border: 2px solid var(--accent-gold);
-      padding: 32px 36px 36px 36px;
+      padding: 28px 30px;
       position: relative;
       margin: 0 auto;
     }
 
-    /* Ornate Double Border Framing */
     .menu-card-inner-frame {
       border: 1.5px solid var(--accent-gold);
-      padding: 24px;
+      padding: 20px;
       position: relative;
       background: radial-gradient(circle at center, #FFFFFF 0%, #FAF6EE 100%);
     }
 
     .corner-bracket {
       position: absolute;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       border-color: var(--accent-gold);
     }
     .cb-tl { top: -2px; left: -2px; border-top: 4px solid var(--accent-gold); border-left: 4px solid var(--accent-gold); }
@@ -219,34 +212,33 @@
     .cb-bl { bottom: -2px; left: -2px; border-bottom: 4px solid var(--accent-gold); border-left: 4px solid var(--accent-gold); }
     .cb-br { bottom: -2px; right: -2px; border-bottom: 4px solid var(--accent-gold); border-right: 4px solid var(--accent-gold); }
 
-    /* Grand Heritage Restaurant Banner */
     .menu-header-banner {
       text-align: center;
-      padding-bottom: 20px;
+      padding-bottom: 16px;
       border-bottom: 2px solid var(--brand-maroon);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       position: relative;
     }
 
     .header-service-mode {
       display: inline-block;
       font-family: var(--font-brand);
-      font-size: 0.72rem;
+      font-size: 0.70rem;
       letter-spacing: 0.22em;
       color: var(--brand-maroon);
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .header-crest {
-      width: 32px;
-      height: 32px;
-      margin: 0 auto 6px auto;
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 4px auto;
     }
 
     .restaurant-title-large {
       font-family: var(--font-brand);
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 800;
       letter-spacing: 0.14em;
       color: var(--brand-maroon);
@@ -256,30 +248,28 @@
 
     .restaurant-tamil-large {
       font-family: var(--font-serif-sub);
-      font-size: 1.05rem;
+      font-size: 1.0rem;
       color: var(--accent-gold-dark);
-      margin-top: 4px;
+      margin-top: 3px;
       font-weight: 600;
-      letter-spacing: 0.04em;
     }
 
     .restaurant-tagline-large {
-      font-size: 0.82rem;
+      font-size: 0.80rem;
       color: var(--text-secondary);
-      margin-top: 5px;
+      margin-top: 4px;
       font-weight: 500;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
 
-    /* Menu Grid Layout (2-Column Physical Card Format) */
+    /* 2-Column Physical Grid */
     .menu-columns-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 32px;
-      row-gap: 26px;
+      column-gap: 28px;
+      row-gap: 22px;
     }
 
-    /* Category Section on Menu Card */
     .menu-cat-section {
       break-inside: avoid;
     }
@@ -290,46 +280,50 @@
       justify-content: space-between;
       border-bottom: 1.5px solid var(--accent-gold);
       padding-bottom: 4px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .menu-cat-title {
       font-family: var(--font-brand);
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       font-weight: 700;
       color: var(--brand-maroon);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .cat-emblem-dot {
       color: var(--accent-gold);
-      font-size: 0.75rem;
+      font-size: 0.70rem;
     }
 
-    .menu-cat-note {
-      font-size: 0.68rem;
-      color: var(--text-tertiary);
-      font-style: italic;
-      font-family: var(--font-serif-sub);
+    .menu-cat-subhead {
+      font-family: var(--font-brand);
+      font-size: 0.80rem;
+      font-weight: 700;
+      color: var(--accent-gold-dark);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 8px 0 4px 0;
+      padding-bottom: 2px;
+      border-bottom: 1px dotted var(--border-warm);
     }
 
-    /* Dish Item in Menu Card */
     .menu-dish-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
     }
 
     .menu-dish-entry {
       display: flex;
       flex-direction: column;
-      gap: 2px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed rgba(226, 211, 196, 0.8);
+      gap: 1px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed rgba(226, 211, 196, 0.7);
     }
 
     .menu-dish-entry:last-child {
@@ -341,20 +335,19 @@
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
     }
 
     .dish-title-group {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       flex: 1;
     }
 
-    /* Veg/Non-Veg FSSAI Symbol */
     .fssai-box {
-      width: 11px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       border-radius: 2px;
       display: inline-flex;
       align-items: center;
@@ -368,8 +361,8 @@
     }
     .fssai-box.veg::after {
       content: '';
-      width: 5px;
-      height: 5px;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
       background-color: var(--veg-green);
     }
@@ -379,39 +372,39 @@
     }
     .fssai-box.non-veg::after {
       content: '';
-      width: 5px;
-      height: 5px;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
       background-color: var(--non-veg-maroon);
     }
 
     .dish-name-print {
       font-family: var(--font-brand);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--brand-maroon);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
     }
 
     .dish-signature-star {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: var(--accent-gold-dark);
       font-weight: 700;
     }
 
     .dish-price-tag {
       font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       font-weight: 800;
       color: var(--brand-maroon);
       white-space: nowrap;
       display: flex;
       align-items: baseline;
-      gap: 2px;
+      gap: 1px;
     }
 
     .price-currency {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 700;
     }
 
@@ -419,41 +412,27 @@
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 6px;
+      gap: 4px;
     }
 
     .dish-tamil-text {
       font-family: var(--font-serif-sub);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: #7A6657;
       font-weight: 500;
     }
 
-    .dish-portion-text {
-      font-size: 0.65rem;
-      color: var(--text-tertiary);
-      font-weight: 600;
-    }
-
-    .dish-desc-print {
-      font-size: 0.70rem;
-      color: var(--text-secondary);
-      line-height: 1.35;
-      margin-top: 1px;
-    }
-
-    /* High-Resolution QR Code Feature Callout on Card */
     .menu-qr-callout-panel {
       grid-column: 1 / -1;
       margin-top: 10px;
       background: linear-gradient(135deg, #FAF4E8 0%, #F5ECE0 100%);
       border: 1.5px solid var(--accent-gold);
       border-radius: 8px;
-      padding: 16px 20px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
     .qr-callout-info {
@@ -462,26 +441,26 @@
 
     .qr-callout-title {
       font-family: var(--font-brand);
-      font-size: 0.95rem;
+      font-size: 0.90rem;
       font-weight: 700;
       color: var(--brand-maroon);
-      letter-spacing: 0.06em;
-      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
     .qr-callout-desc {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--text-secondary);
-      line-height: 1.4;
-      margin-bottom: 6px;
+      line-height: 1.35;
+      margin-bottom: 5px;
     }
 
     .qr-callout-url {
       font-family: monospace;
-      font-size: 0.72rem;
+      font-size: 0.70rem;
       color: var(--brand-maroon);
       font-weight: 600;
       background: #FFF;
@@ -492,13 +471,12 @@
     }
 
     .qr-callout-thumb {
-      width: 90px;
-      height: 90px;
+      width: 84px;
+      height: 84px;
       background: #FFF;
       border: 1.5px solid var(--accent-gold);
       border-radius: 6px;
       padding: 4px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       flex-shrink: 0;
     }
 
@@ -509,13 +487,12 @@
       display: block;
     }
 
-    /* Menu Card Bottom Policy Notice */
     .menu-card-footer {
-      margin-top: 20px;
-      padding-top: 14px;
+      margin-top: 18px;
+      padding-top: 12px;
       border-top: 1.5px solid var(--border-warm);
       text-align: center;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       color: var(--text-tertiary);
       display: flex;
       justify-content: space-around;
@@ -523,15 +500,7 @@
       gap: 8px;
     }
 
-    .footer-policy-item {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* ==========================================================================
-       VIEW 2: DINE-IN TABLE STAND CARD (ACRYLIC TENT / TABLE CARD)
-       ========================================================================== */
+    /* TABLE STAND VIEW */
     .table-stand-container {
       display: none;
       width: 100%;
@@ -547,29 +516,27 @@
       background-color: var(--bg-paper);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(192, 141, 56, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
       border: 2px solid var(--accent-gold);
-      position: relative;
     }
 
     .stand-top-banner {
       background: linear-gradient(180deg, #4E0C13 0%, #300508 100%);
       color: #FAF7F2;
-      padding: 24px 20px 20px 20px;
+      padding: 22px 20px 18px 20px;
       text-align: center;
-      position: relative;
       border-bottom: 2px solid var(--accent-gold);
     }
 
     .stand-crest {
-      width: 30px;
-      height: 30px;
-      margin: 0 auto 6px auto;
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 4px auto;
     }
 
     .stand-brand-title {
       font-family: var(--font-brand);
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       color: #FFF9EE;
@@ -578,52 +545,46 @@
 
     .stand-brand-tamil {
       font-family: var(--font-serif-sub);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--accent-gold-light);
-      margin-top: 4px;
-      font-weight: 500;
+      margin-top: 3px;
     }
 
     .stand-brand-sub {
-      font-size: 0.72rem;
+      font-size: 0.70rem;
       color: rgba(250, 247, 242, 0.85);
-      margin-top: 4px;
-      letter-spacing: 0.02em;
+      margin-top: 3px;
     }
 
     .stand-body {
-      padding: 24px 20px;
+      padding: 22px 20px;
       text-align: center;
       background: radial-gradient(circle at center, #FFFFFF 0%, #FAF7F2 100%);
     }
 
     .stand-prompt-heading {
       font-family: var(--font-brand);
-      font-size: 1.10rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      letter-spacing: 0.06em;
       color: var(--brand-maroon);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .stand-prompt-sub {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--text-secondary);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .stand-qr-box {
-      width: 210px;
-      height: 210px;
-      margin: 0 auto 14px auto;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 12px auto;
       background: #FFFFFF;
       border: 2px solid var(--accent-gold);
       border-radius: 12px;
-      padding: 10px;
-      box-shadow: 0 6px 18px rgba(78, 12, 19, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 8px;
+      box-shadow: 0 4px 14px rgba(78, 12, 19, 0.12);
     }
 
     .stand-qr-img {
@@ -631,12 +592,11 @@
       height: 100%;
       object-fit: contain;
       display: block;
-      border-radius: 4px;
     }
 
     .stand-url-badge {
       font-family: monospace;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       color: var(--brand-maroon);
       background-color: var(--bg-ivory-dark);
       padding: 5px 12px;
@@ -644,37 +604,36 @@
       display: inline-block;
       word-break: break-all;
       border: 1px dashed var(--border-warm);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       font-weight: 600;
     }
 
     .stand-steps-list {
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 6px;
       text-align: left;
       background-color: #FFFDF9;
       border: 1px solid var(--border-warm);
       border-radius: 8px;
-      padding: 12px 14px;
-      margin-bottom: 16px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
     }
 
     .stand-step-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      color: var(--text-primary);
+      gap: 7px;
+      font-size: 0.72rem;
     }
 
     .stand-step-num {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background-color: var(--brand-maroon);
       color: #FFF;
-      font-size: 0.65rem;
+      font-size: 0.60rem;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -685,96 +644,24 @@
     .stand-bottom-note {
       background-color: var(--brand-maroon-dark);
       color: #FAF7F2;
-      padding: 12px 16px;
+      padding: 10px 14px;
       text-align: center;
-      font-size: 0.70rem;
+      font-size: 0.68rem;
       border-top: 1px solid var(--accent-gold);
     }
 
-    .stand-bottom-highlight {
-      font-weight: 600;
-      color: var(--accent-gold-light);
-    }
-
-    /* ==========================================================================
-       PRINT SPECIFIC STYLES (@media print)
-       ========================================================================== */
     @media print {
-      body {
-        background: transparent !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .top-toolbar {
-        display: none !important;
-      }
-
-      .menu-card-document {
-        box-shadow: none !important;
-        border: 1.5px solid #000 !important;
-        padding: 16px 20px !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        page-break-after: always;
-      }
-
-      .menu-card-inner-frame {
-        border-color: #555 !important;
-        background: #FFF !important;
-        padding: 16px !important;
-      }
-
-      .table-stand-container {
-        max-width: 100% !important;
-        width: 100% !important;
-        box-shadow: none !important;
-      }
-
-      .stand-card-box {
-        box-shadow: none !important;
-        border: 1.5px solid #000 !important;
-        margin: 0 auto;
-        max-width: 380px;
-      }
-
-      /* Avoid breaking dish entries across pages */
-      .menu-dish-entry {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-
-      .menu-cat-section {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
+      body { background: transparent !important; padding: 0 !important; }
+      .top-toolbar { display: none !important; }
+      .menu-card-document { box-shadow: none !important; border: 1px solid #000 !important; width: 100% !important; max-width: 100% !important; padding: 12px 16px !important; }
+      .menu-card-inner-frame { background: #FFF !important; padding: 12px !important; border-color: #666 !important; }
+      .menu-dish-entry { break-inside: avoid; page-break-inside: avoid; }
+      .menu-cat-section { break-inside: avoid; page-break-inside: avoid; }
     }
 
-    /* Responsive for Small Mobile Screen Preview */
     @media (max-width: 768px) {
-      .menu-card-document {
-        padding: 18px 16px;
-      }
-      .menu-card-inner-frame {
-        padding: 14px;
-      }
-      .menu-columns-grid {
-        grid-template-columns: 1fr;
-        row-gap: 20px;
-      }
-      .restaurant-title-large {
-        font-size: 1.6rem;
-      }
-      .menu-qr-callout-panel {
-        flex-direction: column;
-        text-align: center;
-      }
-      .qr-callout-title {
-        justify-content: center;
-      }
-      .qr-callout-thumb {
-        margin: 0 auto;
-      }
+      .menu-columns-grid { grid-template-columns: 1fr; }
+      .menu-qr-callout-panel { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -783,13 +670,11 @@
   <!-- CONTROL TOOLBAR -->
   <div class="top-toolbar">
     <div class="toolbar-title">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
         <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="16" y1="13" x2="8" y2="13"></line>
-        <line x1="16" y1="17" x2="8" y2="17"></line>
       </svg>
-      <span>KARUMBUR BIRYANI — MENU CARD PRINT STUDIO</span>
+      <span>KARUMBUR BIRYANI — RESTAURANT PRINT STUDIO</span>
     </div>
 
     <div class="toolbar-actions">
@@ -799,7 +684,7 @@
       </div>
 
       <button type="button" class="action-btn action-btn-primary" onclick="window.print()">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
           <polyline points="6 9 6 2 18 2 18 9"></polyline>
           <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
           <rect x="6" y="14" width="12" height="8"></rect>
@@ -808,12 +693,12 @@
       </button>
 
       <a href="index.html" class="action-btn action-btn-outline" target="_blank">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
           <polyline points="15 3 21 3 21 9"></polyline>
           <line x1="10" y1="14" x2="21" y2="3"></line>
         </svg>
-        Open Mobile App
+        Open Live Menu
       </a>
     </div>
 
@@ -825,7 +710,7 @@
   </div>
 
 
-  <!-- VIEW 1: COMPLETE PHYSICAL MENU CARD -->
+  <!-- VIEW 1: FULL RESTAURANT MENU CARD -->
   <main class="menu-card-document" id="fullMenuCardView">
     <div class="menu-card-inner-frame">
       <div class="corner-bracket cb-tl"></div>
@@ -844,7 +729,7 @@
 
         <h1 class="restaurant-title-large">KARUMBUR BIRYANI</h1>
         <p class="restaurant-tamil-large">கரும்பூர் பாரம்பரிய தம் பிரியாணி</p>
-        <p class="restaurant-tagline-large">Woodfire Dum Cooking • Pure Cow Ghee & Seeraga Samba Rice</p>
+        <p class="restaurant-tagline-large">Woodfire Dum Cooking • Pure Cow Ghee & Seeraga Samba</p>
       </header>
 
       <div class="menu-columns-grid">
@@ -852,162 +737,286 @@
         <!-- COLUMN 1 -->
         <div class="menu-column">
 
-          <!-- 1. DUM BIRYANI SPECIALS -->
+          <!-- 1. STARTERS -->
           <section class="menu-cat-section">
             <div class="menu-cat-header">
-              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Dum Biryani Specials</h2>
-              <span class="menu-cat-note">Slow-cooked in degh</span>
+              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Starters (Veg & Non-Veg)</h2>
             </div>
 
+            <!-- Gobi Starters -->
+            <div class="menu-cat-subhead">Gobi (Veg)</div>
             <div class="menu-dish-list">
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg" title="Non-Vegetarian"></span>
-                    <span class="dish-name-print">Karumbur Special Mutton Biryani</span>
-                    <span class="dish-signature-star">★ Chef's Special</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>360</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">கரும்பூர் ஸ்பெஷல் மட்டன் பிரியாணி</span>
-                  <span class="dish-portion-text">Regular (Serves 1-2) • 🌶️🌶️</span>
-                </div>
-                <p class="dish-desc-print">Grass-fed young mutton layered with aged Seeraga Samba, pure cow ghee & saffron in sealed earthen degh.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Woodfire Chicken Dum Biryani</span>
-                    <span class="dish-signature-star">★ Chef's Special</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>260</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">நாட்டுக்கோழி மரச்செக்கு பிரியாணி</span>
-                  <span class="dish-portion-text">Regular (Serves 1-2) • 🌶️🌶️</span>
-                </div>
-                <p class="dish-desc-print">Succulent country chicken dum-cooked with whole spices, caramelized shallots, fresh herbs & fragrant rice.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Royal Nalli Gosht Biryani</span>
-                    <span class="dish-signature-star">★ Chef's Special</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>440</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">ராயல் நவாபி நல்லி பிரியாணி</span>
-                  <span class="dish-portion-text">Mutton Shank • 🌶️🌶️</span>
-                </div>
-                <p class="dish-desc-print">Slow-braised tender mutton shank marrow bones infused into aromatic dum rice. Rich & marrow-glazed.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Karumbur Spiced Egg Biryani</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>190</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">கார முட்டை தம் பிரியாணி</span>
-                  <span class="dish-portion-text">2 Farm Eggs • 🌶️🌶️</span>
-                </div>
-                <p class="dish-desc-print">Farm eggs pan-crisped in biryani gravy spices, nested in firewood-simmered dum rice.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg" title="Vegetarian"></span>
-                    <span class="dish-name-print">Shahi Malai Paneer Dum Biryani</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>230</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">शाही பன்னீர் தம் பிரியாணி</span>
-                  <span class="dish-portion-text">Paneer & Mushroom • 🌶️</span>
-                </div>
-                <p class="dish-desc-print">Fresh malai paneer & button mushrooms slow-steamed with saffron strands, whole spices & mint.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- 2. STARTERS & TANDOOR -->
-          <section class="menu-cat-section" style="margin-top: 18px;">
-            <div class="menu-cat-header">
-              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Starters & Tandoor</h2>
-              <span class="menu-cat-note">Charred & wok-tossed</span>
-            </div>
-
-            <div class="menu-dish-list">
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Karumbur Mutton Pepper Sukka</span>
-                    <span class="dish-signature-star">★ Chef's Special</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>320</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">கரும்பூர் மட்டன் சுக்கா வறுவல்</span>
-                  <span class="dish-portion-text">Iron Skillet • 🌶️🌶️🌶️ Fiery</span>
-                </div>
-                <p class="dish-desc-print">Baby mutton pieces pan-roasted dry with crushed Tellicherry peppercorns, shallots & curry leaves.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Arcot Heritage Chicken 65</span>
-                    <span class="dish-signature-star">★ Chef's Special</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>220</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">ஆற்காடு சிக்கன் 65</span>
-                  <span class="dish-portion-text">Crisp Boneless • 🌶️🌶️</span>
-                </div>
-                <p class="dish-desc-print">Boneless chicken cubes crisp-fried with crushed garlic, roasted cumin, Kashmiri chili & crackling leaves.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Coromandel Prawns Thokku Roast</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>380</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">காரைக்குடி இறால் தொக்கு வறுவல்</span>
-                  <span class="dish-portion-text">Wild Sea Prawns • 🌶️🌶️🌶️</span>
-                </div>
-                <p class="dish-desc-print">Sea prawns tossed in thick tomato-shallot reduction, fennel powder, and coarse black pepper.</p>
-              </div>
-
               <div class="menu-dish-entry">
                 <div class="dish-header-line">
                   <div class="dish-title-group">
                     <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Ghee Roast Paneer Bites</span>
+                    <span class="dish-name-print">Gobi 65</span>
+                    <span class="dish-signature-star">★ Special</span>
                   </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>210</div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>160</div>
                 </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">நெய் ரோஸ்ட் பன்னீர்</span>
-                  <span class="dish-portion-text">Kundapur Style • 🌶️🌶️</span>
+                <div class="dish-subline"><span class="dish-tamil-text">கோபி 65</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Chilli Gobi</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>160</div>
                 </div>
-                <p class="dish-desc-print">Fresh artisanal paneer tossed in slow-roasted red chili paste and pure golden ghee.</p>
+                <div class="dish-subline"><span class="dish-tamil-text">சில்லி கோபி</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Gobi Manchurian</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>160</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">கோபி மஞ்சூரியன்</span></div>
+              </div>
+            </div>
+
+            <!-- Paneer Starters -->
+            <div class="menu-cat-subhead" style="margin-top: 10px;">Paneer (Veg)</div>
+            <div class="menu-dish-list">
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Paneer 65</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">பன்னீர் 65</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Chilli Paneer</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சில்லி பன்னீர்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Honey Paneer</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">ஹனி பன்னீர்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Singapore Paneer</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிங்கப்பூர் பன்னீர்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Paneer Manchurian</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">பன்னீர் மஞ்சூரியன்</span></div>
+              </div>
+            </div>
+
+            <!-- Mushroom Starters -->
+            <div class="menu-cat-subhead" style="margin-top: 10px;">Mushroom (Veg)</div>
+            <div class="menu-dish-list">
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Mushroom 65</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>170</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">காளான் 65</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Chilli Mushroom</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சில்லி காளான்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Salt and Pepper Mushroom</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">பெப்பர் காளான்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Mushroom Manchurian</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">காளான் மஞ்சூரியன்</span></div>
+              </div>
+            </div>
+
+            <!-- Non-Veg Chicken Starters -->
+            <div class="menu-cat-subhead" style="margin-top: 10px;">Chicken Starters (Non-Veg)</div>
+            <div class="menu-dish-list">
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group">
+                    <span class="fssai-box non-veg"></span>
+                    <span class="dish-name-print">Chicken 65 Boneless (8 pieces)</span>
+                    <span class="dish-signature-star">★ Special</span>
+                  </div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">போன்லெஸ் சிக்கன் 65 (8 துண்டுகள்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group">
+                    <span class="fssai-box non-veg"></span>
+                    <span class="dish-name-print">Chicken Lollipop (5 pieces)</span>
+                    <span class="dish-signature-star">★</span>
+                  </div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>170</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் லாலிபாப் (5 துண்டுகள்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Saucy Chicken Lollipop</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>200</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சாஸி சிக்கன் லாலிபாப்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chettinadu Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>190</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">செட்டிநாடு சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Manchurian</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் மஞ்சூரியன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chilli Chicken</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சில்லி சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Crispy Honey Chilli Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">ஹனி சில்லி சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Dragon Chicken</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">டிராகன் சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Garlic Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">கார்லிக் சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Ginger Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">இஞ்சி சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Japan Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">ஜப்பான் சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Kakinada Chicken</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>200</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">காக்கிநாடா சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Lemon Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">லெமன் சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Lemon Pepper Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">லெமன் பெப்பர் சிக்கன்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Salt and Pepper Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">பெப்பர் சிக்கன்</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. BIRIYANI SPECIALS -->
+          <section class="menu-cat-section" style="margin-top: 14px;">
+            <div class="menu-cat-header">
+              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Biriyani Specials</h2>
+            </div>
+            <div class="menu-dish-list">
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group">
+                    <span class="fssai-box non-veg"></span>
+                    <span class="dish-name-print">Chicken Biryani</span>
+                    <span class="dish-signature-star">★ Signature</span>
+                  </div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>160</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் பிரியாணி</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Egg Biriyani</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>120</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">முட்டை பிரியாணி</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Plain Biriyani (Kuska)</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>110</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">குஸ்கா / பிளைன் பிரியாணி</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group">
+                    <span class="fssai-box non-veg"></span>
+                    <span class="dish-name-print">Plain Biriyani with (65) 3 Pc</span>
+                    <span class="dish-signature-star">★ Special</span>
+                  </div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>170</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">குஸ்கா வித் சிக்கன் 65 (3 துண்டுகள்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group">
+                    <span class="fssai-box non-veg"></span>
+                    <span class="dish-name-print">Plain Biriyani with (2) Pc Lollipop</span>
+                    <span class="dish-signature-star">★ Special</span>
+                  </div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>170</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">குஸ்கா வித் லாலிபாப் (2 துண்டுகள்)</span></div>
               </div>
             </div>
           </section>
@@ -1018,215 +1027,270 @@
         <!-- COLUMN 2 -->
         <div class="menu-column">
 
-          <!-- 3. CURRIES & DALCHA -->
+          <!-- 3. CHINESE COMBOS -->
           <section class="menu-cat-section">
             <div class="menu-cat-header">
-              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Curries & Dalcha</h2>
-              <span class="menu-cat-note">Rich slow-simmered</span>
+              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Chinese Combos</h2>
             </div>
-
+            
+            <div class="menu-cat-subhead">Veg Combos (Includes Lemon Juice)</div>
             <div class="menu-dish-list">
               <div class="menu-dish-entry">
                 <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Traditional Karumbur Dalcha</span>
-                    <span class="dish-signature-star">★ Soulmate</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>120</div>
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Veg Rice/Noodles + Gobi Manchurian</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
                 </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">பாரம்பரிய கத்திரிக்காய் தால்சா</span>
-                  <span class="dish-portion-text">Bowl • 🌶️ Mild</span>
-                </div>
-                <p class="dish-desc-print">Country brinjals & chana dal simmered with raw tamarind, mint & woodfire bone broth.</p>
+                <div class="dish-subline"><span class="dish-tamil-text">வெஜ் காம்போ (கோபி மஞ்சூரியன் + ஜூஸ்)</span></div>
               </div>
-
               <div class="menu-dish-entry">
                 <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Chettinad Mutton Pepper Curry</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>340</div>
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Veg Rice/Noodles + Chilli Gobi</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
                 </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">செட்டிநாடு மட்டன் மிளகு கறி</span>
-                  <span class="dish-portion-text">Handi • 🌶️🌶️🌶️ Fiery</span>
-                </div>
-                <p class="dish-desc-print">Robust roasted spice gravy with stone-flower (kalpasi), star anise & tender mutton chunks.</p>
+                <div class="dish-subline"><span class="dish-tamil-text">வெஜ் காம்போ (சில்லி கோபி + ஜூஸ்)</span></div>
               </div>
-
               <div class="menu-dish-entry">
                 <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box non-veg"></span>
-                    <span class="dish-name-print">Dilli Nawabi Butter Chicken</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>270</div>
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Veg Rice/Noodles + Paneer Manchurian</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
                 </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">தில்லி நவாபி பட்டர் சிக்கன்</span>
-                  <span class="dish-portion-text">Handi • 🌶️ Mild</span>
+                <div class="dish-subline"><span class="dish-tamil-text">வெஜ் காம்போ (பன்னீர் மஞ்சூரியன் + ஜூஸ்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Veg Rice/Noodles + Chilli Paneer</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
                 </div>
-                <p class="dish-desc-print">Tandoori chicken tikka simmered in silky makhani gravy with butter, cashews & fenugreek leaves.</p>
+                <div class="dish-subline"><span class="dish-tamil-text">வெஜ் காம்போ (சில்லி பன்னீர் + ஜூஸ்)</span></div>
+              </div>
+            </div>
+
+            <div class="menu-cat-subhead" style="margin-top: 8px;">Non-Veg Combos (Includes Lemon Juice)</div>
+            <div class="menu-dish-list">
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Rice/Noodles + Chilli Chicken</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் காம்போ (சில்லி சிக்கன் + ஜூஸ்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Rice/Noodles + Chicken Manchurian</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் காம்போ (சிக்கன் மஞ்சூரியன் + ஜூஸ்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Rice/Noodles + Garlic Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் காம்போ (கார்லிக் சிக்கன் + ஜூஸ்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Rice/Noodles + Ginger Chicken</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>250</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் காம்போ (இஞ்சி சிக்கன் + ஜூஸ்)</span></div>
+              </div>
+              <div class="menu-dish-entry" style="background: rgba(192, 141, 56, 0.08); padding: 4px 6px; border-radius: 4px;">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">* Add on Egg (For Combos)</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>10</div>
+                </div>
               </div>
             </div>
           </section>
 
-          <!-- 4. PAROTTAS & BREADS -->
-          <section class="menu-cat-section" style="margin-top: 18px;">
+          <!-- 4. PAROTTA & BREADS -->
+          <section class="menu-cat-section" style="margin-top: 14px;">
             <div class="menu-cat-header">
-              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Parottas & Breads</h2>
-              <span class="menu-cat-note">Fresh from tawa & tandoor</span>
+              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Parotta Specials & Breads</h2>
             </div>
-
             <div class="menu-dish-list">
               <div class="menu-dish-entry">
                 <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Malabar Coin Parotta (2 pcs)</span>
-                    <span class="dish-signature-star">★ Special</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>70</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">மலபார் காயின் பரோட்டா</span>
-                  <span class="dish-portion-text">2 Pieces</span>
-                </div>
-                <p class="dish-desc-print">Flaky, buttery, multi-layered flatbread crushed by hand while sizzling hot to fluff up layers.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Madurai Bun Parotta (2 pcs)</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>90</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">மதுரை பன் பரோட்டா</span>
-                  <span class="dish-portion-text">2 Pieces</span>
-                </div>
-                <p class="dish-desc-print">Crispy round pillow of buttery layers, golden crunchy outside with soft airy bread inside.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Tandoori Butter Naan</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>60</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">தந்தூரி பட்டர் நான்</span>
-                  <span class="dish-portion-text">1 Full Naan</span>
-                </div>
-                <p class="dish-desc-print">Classic clay-oven flatbread charred over open coal tandoor, brushed with warm farmhouse butter.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- 5. DESSERTS & REFRESHERS -->
-          <section class="menu-cat-section" style="margin-top: 18px;">
-            <div class="menu-cat-header">
-              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Mithai & Refreshers</h2>
-              <span class="menu-cat-note">Sweet finish & digestives</span>
-            </div>
-
-            <div class="menu-dish-list">
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Chilled Elaneer Payasam</span>
-                    <span class="dish-signature-star">★ Signature</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>130</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">குளிர்ந்த இளநீர் பாயாசம்</span>
-                  <span class="dish-portion-text">Glass (Serves 1)</span>
-                </div>
-                <p class="dish-desc-print">Pollachi tender coconut water, jelly pulp, condensed milk & cardamom.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Royal Arcot Shahi Tukda</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>120</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">ராயல் ஷாஹி துக்டா</span>
-                  <span class="dish-portion-text">2 Portions</span>
-                </div>
-                <p class="dish-desc-print">Crisp ghee-fried bread triangles soaked in saffron syrup & thick almond-pistachio rabri.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Earthen Pot Malai Kulfi</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>110</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">மட்கா மலாய் குல்பி</span>
-                  <span class="dish-portion-text">1 Clay Matka</span>
-                </div>
-                <p class="dish-desc-print">Slow-condensed buffalo milk kulfi set in porous clay pot with pistachios & saffron.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Nannari Sharbath (Sabja)</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>70</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">நன்னாரி சர்பத்</span>
-                  <span class="dish-portion-text">Tall Glass (300ml)</span>
-                </div>
-                <p class="dish-desc-print">Wild sarsaparilla root cooler with lime juice, crushed ice & blooming sabja seeds.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Heritage Chilled Rose Milk</span>
-                  </div>
-                  <div class="dish-price-tag"><span class="price-currency">₹</span>70</div>
-                </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">பாரம்பரிய ரோஸ் மில்க்</span>
-                  <span class="dish-portion-text">Glass (300ml)</span>
-                </div>
-                <p class="dish-desc-print">Cold sweetened milk infused with pure Damascus rose essence & crushed ice.</p>
-              </div>
-
-              <div class="menu-dish-entry">
-                <div class="dish-header-line">
-                  <div class="dish-title-group">
-                    <span class="fssai-box veg"></span>
-                    <span class="dish-name-print">Kumbakonam Degree Coffee</span>
-                  </div>
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Chapati SET (2 pieces)</span></div>
                   <div class="dish-price-tag"><span class="price-currency">₹</span>50</div>
                 </div>
-                <div class="dish-subline">
-                  <span class="dish-tamil-text">கும்பகோணம் டிகிரி காபி</span>
-                  <span class="dish-portion-text">Brass Dabara</span>
+                <div class="dish-subline"><span class="dish-tamil-text">சப்பாத்தி செட் (2 துண்டுகள்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Parotta SET (2 pieces)</span><span class="dish-signature-star">★ Special</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>50</div>
                 </div>
-                <p class="dish-desc-print">First-decoction dark chicory blend poured frothy in traditional brass dabara.</p>
+                <div class="dish-subline"><span class="dish-tamil-text">பரோட்டா செட் (2 துண்டுகள்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Madurai Bun Parotta (per piece)</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>35</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">மதுரை பன் பரோட்டா (1 துண்டு)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Coin Salna Parotta</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>120</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">காயின் சால்னா பரோட்டா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Chilli Parotta</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>130</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சில்லி பரோட்டா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Kizhi Parotta</span><span class="dish-signature-star">★ Special</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>180</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">வாழை இலை கிழி பரோட்டா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Egg Kothu Parotta</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>120</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">முட்டை கொத்து பரோட்டா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Kothu Parotta</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>150</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் கொத்து பரோட்டா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Egg Lappa</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>90</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">முட்டை லப்பா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Lappa</span><span class="dish-signature-star">★</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>150</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">சிக்கன் லப்பா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Plain Veechu Parotta</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>30</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">வீச்சு பரோட்டா</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Egg Veechu Parotta</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>50</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">முட்டை வீச்சு பரோட்டா</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. DOSA VARIETIES -->
+          <section class="menu-cat-section" style="margin-top: 14px;">
+            <div class="menu-cat-header">
+              <h2 class="menu-cat-title"><span class="cat-emblem-dot">❖</span> Dosa Varieties</h2>
+            </div>
+            
+            <div class="menu-cat-subhead">Veg Dosa</div>
+            <div class="menu-dish-list">
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Plain Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>50</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">பிளைன் தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Kal Dosa SET (2 pieces)</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>50</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">கல் தோசை செட் (2 துண்டுகள்)</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Kal Nice Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>35</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">கல் நைஸ் தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Ghee Dosa</span><span class="dish-signature-star">★</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>90</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">நெய் தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Butter Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>80</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">பட்டர் தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Podi Dosa</span><span class="dish-signature-star">★</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>60</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">பொடி தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Ghee Podi Dosa</span><span class="dish-signature-star">★ Special</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>100</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">நெய் பொடி தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Butter Podi Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>90</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">பட்டர் பொடி தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Garlic Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>80</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">பூண்டு தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Butter Garlic Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>90</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">பட்டர் பூண்டு தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Onion Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>70</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">வெங்காய தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Onion Podi Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>80</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">வெங்காய பொடி தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Onion Uthappam</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>60</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">வெங்காய ஊத்தப்பம்</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Gobi Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>140</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">கோபி தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Paneer Dosa</span><span class="dish-signature-star">★</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>150</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">பன்னீர் தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box veg"></span><span class="dish-name-print">Mushroom Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>160</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">காளான் தோசை</span></div>
+              </div>
+            </div>
+
+            <div class="menu-cat-subhead" style="margin-top: 8px;">Non-Veg Dosa</div>
+            <div class="menu-dish-list">
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Egg Dosa</span><span class="dish-signature-star">★</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>60</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">முட்டை தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Kal Egg Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>40</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">கல் முட்டை தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line"><div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Kal Nice Egg Dosa</span></div><div class="dish-price-tag"><span class="price-currency">₹</span>50</div></div>
+                <div class="dish-subline"><span class="dish-tamil-text">கல் நைஸ் முட்டை தோசை</span></div>
+              </div>
+              <div class="menu-dish-entry">
+                <div class="dish-header-line">
+                  <div class="dish-title-group"><span class="fssai-box non-veg"></span><span class="dish-name-print">Chicken Kari Dosa</span><span class="dish-signature-star">★ Madurai Special</span></div>
+                  <div class="dish-price-tag"><span class="price-currency">₹</span>150</div>
+                </div>
+                <div class="dish-subline"><span class="dish-tamil-text">மதுரை சிக்கன் கறி தோசை</span></div>
               </div>
             </div>
           </section>
@@ -1237,14 +1301,14 @@
         <div class="menu-qr-callout-panel">
           <div class="qr-callout-info">
             <h3 class="qr-callout-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
               Prefer to View HD Photos & Ingredients on Your Mobile?
             </h3>
-            <p class="qr-callout-desc">Scan this QR code with any smartphone camera to open our interactive digital photo menu. Browse rich photography, allergen details, chef notes, and spice meters directly on your screen.</p>
+            <p class="qr-callout-desc">Scan this QR code with any smartphone camera to open our interactive digital photo menu. Browse rich photography, spice meters, and dietary tags directly on your phone.</p>
             <span class="qr-callout-url" id="menuCardUrlDisplay">https://menu-card-plum.vercel.app/</span>
           </div>
 
@@ -1255,12 +1319,11 @@
 
       </div>
 
-      <!-- Footer Policy Notice -->
       <footer class="menu-card-footer">
-        <div class="footer-policy-item">🔥 Fresh Woodfire Dum Preparation (10-15 mins for specialty roasts)</div>
-        <div class="footer-policy-item">🌱 Pure Cow Ghee & 100% Halal Meats</div>
-        <div class="footer-policy-item">🛎️ To place an order, please signal your Table Captain</div>
-        <div class="footer-policy-item">© Karumbur Biryani</div>
+        <div>🔥 Prepared Fresh on Tawa & Woodfire (10-15 mins for specialty roasts)</div>
+        <div>🌱 100% Halal Meats & Pure Cow Ghee</div>
+        <div>🛎️ To place an order, please signal your Table Captain</div>
+        <div>© Karumbur Biryani</div>
       </footer>
     </div>
   </main>
@@ -1313,8 +1376,8 @@
       </div>
 
       <div class="stand-bottom-note">
-        <p class="stand-bottom-highlight">Prepared Fresh in Woodfire Dum Pots • Strictly Dine-In</p>
-        <p>© Karumbur Biryani • Pure Cow Ghee & Seeraga Samba</p>
+        <p style="font-weight: 600; color: #DFC07A;">Prepared Fresh in Woodfire Dum Pots • Strictly Dine-In</p>
+        <p>© Karumbur Biryani • Pure Cow Ghee & Natural Spices</p>
       </div>
     </div>
   </div>
@@ -1322,7 +1385,6 @@
 
   <!-- CLIENT SCRIPTS -->
   <script>
-    // Toggle View State
     const btnViewMenu = document.getElementById('btnViewMenuCard');
     const btnViewStand = document.getElementById('btnViewTableStand');
     const fullMenuView = document.getElementById('fullMenuCardView');
@@ -1342,7 +1404,6 @@
       standView.classList.add('active-view');
     });
 
-    // Dynamic URL & QR Code Updater
     const urlInput = document.getElementById('liveTargetUrl');
     const btnUpdate = document.getElementById('btnUpdateUrl');
     const menuCardUrl = document.getElementById('menuCardUrlDisplay');

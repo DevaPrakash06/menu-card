@@ -1,410 +1,1158 @@
 /**
  * KARUMBUR BIRYANI — DINE-IN QR MENU INTERACTIVE ENGINE
- * Authentic Royal Arcot Heritage Woodfire Dum Cuisine
+ * Authentic Restaurant Menu Catalog (73 Dishes & Combos)
  * Strictly Dine-In (No Cart, No Checkout, No Online Ordering)
  */
 
 (function () {
   'use strict';
 
-  // --- RESTAURANT DISH CATALOG ---
+  // --- RESTAURANT DISH CATALOG (73 ITEMS) ---
   const MENU_DATA = [
     {
-      id: 'cat-biryani',
-      categoryName: 'Dum Biryani Specials',
-      categorySubtitle: 'Slow-cooked over marachekku woodfire embers with fragrant Seeraga Samba rice & pure cow ghee',
+      id: 'cat-starters',
+      categoryName: 'Starters (Veg & Non-Veg)',
+      categorySubtitle: 'Crispy appetizers, wok-tossed indo-chinese delights & sizzling hot roasts',
       items: [
+        // GOBI (VEG)
         {
-          id: 'dish-mutton-dum',
-          name: 'Karumbur Special Mutton Biryani',
-          tamil: 'கரும்பூர் ஸ்பெஷல் மட்டன் பிரியாணி',
-          category: 'Dum Biryani Specials',
-          isVeg: false,
+          id: 'dish-gobi-65',
+          name: 'Gobi 65',
+          tamil: 'கோபி 65',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
           isSignature: true,
-          price: 360,
-          portion: 'Regular (Serves 1-2)',
-          spiceLevel: 2, // 1: Mild, 2: Medium, 3: Fiery
-          image: 'images/mutton-biryani.jpg',
-          desc: 'Our 48-year signature recipe. Tender grass-fed young mutton cuts layered with aged Seeraga Samba rice, pure cow ghee, and saffron milk in sealed earthen degh.',
-          story: 'Cooked in sealed copper handis over tamarind wood coals. The meat is marinated for 6 hours with curd, mint, and house-ground stone masala, producing meltingly tender mutton and non-sticky fragrant grains.',
-          ingredients: ['Grass-fed Mutton', 'Seeraga Samba Rice', 'A2 Cow Ghee', 'Fresh Mint & Coriander', 'Stone-ground Garam Masala', 'Curd', 'Kashmir Saffron'],
-          allergens: ['Contains Dairy (Ghee/Curd)', 'Gluten Free', '100% Halal'],
-          pairing: 'Accompanied with traditional woodfire Dalcha brinjal curry & chilled onion pachadi.'
-        },
-        {
-          id: 'dish-chicken-dum',
-          name: 'Woodfire Chicken Dum Biryani',
-          tamil: 'நாட்டுக்கோழி மரச்செக்கு பிரியாணி',
-          category: 'Dum Biryani Specials',
-          isVeg: false,
-          isSignature: true,
-          price: 260,
-          portion: 'Regular (Serves 1-2)',
+          price: 160,
+          portion: 'Full Plate',
           spiceLevel: 2,
-          image: 'images/chicken-biryani.jpg',
-          desc: 'Succulent country chicken pieces dum-cooked with whole spices, caramelized shallots, fresh herbs, and fragrant rice.',
-          story: 'Prepared using traditional Ambur-style dum method where chicken absorbs whole green cardamoms, cinnamon quills, and green chili broth without heavy artificial coloring.',
-          ingredients: ['Farm Chicken', 'Seeraga Samba Rice', 'Shallots', 'Green Chilies', 'Pure Cow Ghee', 'Fresh Yogurt'],
-          allergens: ['Contains Dairy', 'Gluten Free', '100% Halal'],
-          pairing: 'Best enjoyed with sour brinjal dalcha and boiled egg.'
+          image: 'images/gobi-65.jpg',
+          desc: 'Crispy golden spiced cauliflower florets tossed with curry leaves, green chilies and lemon.',
+          ingredients: ['Fresh Cauliflower', 'Curry Leaves', 'Green Chilies', 'Kashmiri Chili', 'Lemon'],
+          allergens: ['Vegetarian', 'Vegan Friendly']
         },
         {
-          id: 'dish-nalli-dum',
-          name: 'Royal Nalli Gosht Biryani',
-          tamil: 'ராயல் நவாபி நல்லி பிரியாணி',
-          category: 'Dum Biryani Specials',
+          id: 'dish-chilli-gobi',
+          name: 'Chilli Gobi',
+          tamil: 'சில்லி கோபி',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 160,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/chilli-gobi.jpg',
+          desc: 'Wok-tossed battered cauliflower with bell peppers, spring onions and tangy spicy chili sauce.',
+          ingredients: ['Cauliflower', 'Bell Peppers', 'Garlic', 'Chili Sauce', 'Spring Onions'],
+          allergens: ['Vegetarian']
+        },
+        {
+          id: 'dish-gobi-manchurian',
+          name: 'Gobi Manchurian',
+          tamil: 'கோபி மஞ்சூரியன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 160,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/gobi-manchurian.jpg',
+          desc: 'Crispy florets glazed in savory Indo-Chinese Manchurian sauce with garlic, ginger, and soy.',
+          ingredients: ['Cauliflower', 'Ginger-Garlic', 'Dark Soy', 'Spring Onions'],
+          allergens: ['Vegetarian', 'Contains Soy']
+        },
+
+        // PANEER (VEG)
+        {
+          id: 'dish-paneer-65',
+          name: 'Paneer 65',
+          tamil: 'பன்னீர் 65',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/paneer-65.jpg',
+          desc: 'Soft artisanal cottage cheese cubes crisped in spiced batter and tossed with curry leaves.',
+          ingredients: ['Fresh Paneer', 'Red Chili Paste', 'Curry Leaves', 'Cumin'],
+          allergens: ['Vegetarian', 'Contains Dairy']
+        },
+        {
+          id: 'dish-chilli-paneer',
+          name: 'Chilli Paneer',
+          tamil: 'சில்லி பன்னீர்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: true,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/chilli-paneer.jpg',
+          desc: 'Golden paneer cubes stir-fried with green capsicum, onions, garlic and dark chili glaze.',
+          ingredients: ['Paneer', 'Green Capsicum', 'Onions', 'Garlic', 'Chili Sauce'],
+          allergens: ['Vegetarian', 'Contains Dairy']
+        },
+        {
+          id: 'dish-honey-paneer',
+          name: 'Honey Paneer',
+          tamil: 'ஹனி பன்னீர்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 1,
+          image: 'images/honey-paneer.jpg',
+          desc: 'Crisp paneer glazed in sweet honey chili reduction with toasted sesame seeds.',
+          ingredients: ['Paneer', 'Natural Honey', 'Chili Flakes', 'Sesame Seeds'],
+          allergens: ['Vegetarian', 'Contains Dairy']
+        },
+        {
+          id: 'dish-singapore-paneer',
+          name: 'Singapore Paneer',
+          tamil: 'சிங்கப்பூர் பன்னீர்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/singapore-paneer.jpg',
+          desc: 'Spicy wok-tossed paneer cubes in Singaporean spiced chili garlic sauce with bell peppers.',
+          ingredients: ['Paneer', 'Curry Paste', 'Garlic', 'Peppers', 'Spring Onions'],
+          allergens: ['Vegetarian', 'Contains Dairy']
+        },
+        {
+          id: 'dish-paneer-manchurian',
+          name: 'Paneer Manchurian',
+          tamil: 'பன்னீர் மஞ்சூரியன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/paneer-manchurian.jpg',
+          desc: 'Pan-fried cottage cheese tossed in rich aromatic Indo-Chinese Manchurian gravy.',
+          ingredients: ['Paneer', 'Dark Soy Sauce', 'Minced Garlic', 'Ginger', 'Coriander'],
+          allergens: ['Vegetarian', 'Contains Dairy', 'Contains Soy']
+        },
+
+        // MUSHROOM (VEG)
+        {
+          id: 'dish-mushroom-65',
+          name: 'Mushroom 65',
+          tamil: 'காளான் 65',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 170,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/mushroom-65.jpg',
+          desc: 'Fresh button mushrooms fried to crisp perfection with aromatic South Indian spices.',
+          ingredients: ['Button Mushrooms', 'Rice Flour Batter', 'Curry Leaves', 'Lemon'],
+          allergens: ['Vegetarian']
+        },
+        {
+          id: 'dish-chilli-mushroom',
+          name: 'Chilli Mushroom',
+          tamil: 'சில்லி காளான்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/chilli-mushroom.jpg',
+          desc: 'Tender mushrooms wok-fried with crisp onions, capsicum, garlic and hot chili sauce.',
+          ingredients: ['Fresh Mushrooms', 'Green Chili', 'Capsicum', 'Soy Sauce'],
+          allergens: ['Vegetarian']
+        },
+        {
+          id: 'dish-pepper-mushroom',
+          name: 'Salt and Pepper Mushroom',
+          tamil: 'பெப்பர் காளான்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: true,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 3,
+          image: 'images/pepper-mushroom.jpg',
+          desc: 'Dry pan-roasted mushrooms tossed with crushed Tellicherry black peppercorns and shallots.',
+          ingredients: ['Mushrooms', 'Coarse Black Pepper', 'Curry Leaves', 'Shallots'],
+          allergens: ['Vegetarian']
+        },
+        {
+          id: 'dish-mushroom-manchurian',
+          name: 'Mushroom Manchurian',
+          tamil: 'காளான் மஞ்சூரியன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: true,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/mushroom-manchurian.jpg',
+          desc: 'Button mushrooms simmered in classic Chinese ginger-garlic Manchurian glaze.',
+          ingredients: ['Mushrooms', 'Garlic', 'Ginger', 'Soy Sauce', 'Spring Onions'],
+          allergens: ['Vegetarian', 'Contains Soy']
+        },
+
+        // CHICKEN (NON-VEG)
+        {
+          id: 'dish-chicken-65-boneless',
+          name: 'Chicken 65 Boneless (8 pieces)',
+          tamil: 'போன்லெஸ் சிக்கன் 65 (8 துண்டுகள்)',
+          category: 'Starters (Veg & Non-Veg)',
           isVeg: false,
           isSignature: true,
-          price: 440,
-          portion: 'Chef Signature (Serves 1-2)',
+          price: 180,
+          portion: '8 Boneless Pieces',
           spiceLevel: 2,
-          image: 'images/nalli-biryani.jpg',
-          desc: 'Slow-braised tender mutton shank marrow bones infused into aromatic dum rice. Rich, marrow-glazed, and deeply satisfying.',
-          story: 'A tribute to the Arcot Nawabi court banquets. The marrow dissolves into the simmering meat stock before rice is added for final dum sealing.',
-          ingredients: ['Mutton Shank (Nalli)', 'Bone Marrow Jus', 'Seeraga Samba Rice', 'Cloves & Mace', 'Pure Ghee'],
-          allergens: ['Contains Dairy', 'Gluten Free', '100% Halal'],
-          pairing: 'Served with Dalcha gravy and fresh mint raita.'
+          image: 'images/chicken-65-boneless.jpg',
+          desc: 'Crisp-fried ruby red tender chicken bites with crushed garlic, roasted cumin and crackling curry leaves.',
+          ingredients: ['Farm Chicken Boneless', 'Red Chili Paste', 'Garlic', 'Curry Leaves', 'Lemon'],
+          allergens: ['100% Halal']
         },
         {
-          id: 'dish-egg-dum',
-          name: 'Karumbur Spiced Egg Biryani',
-          tamil: 'கார முட்டை தம் பிரியாணி',
-          category: 'Dum Biryani Specials',
+          id: 'dish-chicken-lollipop',
+          name: 'Chicken Lollipop (5 pieces)',
+          tamil: 'சிக்கன் லாலிபாப் (5 துண்டுகள்)',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: true,
+          price: 170,
+          portion: '5 Pieces',
+          spiceLevel: 2,
+          image: 'images/chicken-lollipop.jpg',
+          desc: 'Frenched chicken winglets crisp-fried to a golden crunch, served with spicy garlic dip.',
+          ingredients: ['Chicken Winglets', 'Ginger-Garlic', 'Red Spices', 'Egg Wash'],
+          allergens: ['100% Halal', 'Contains Egg']
+        },
+        {
+          id: 'dish-saucy-chicken-lollipop',
+          name: 'Saucy Chicken Lollipop',
+          tamil: 'சாஸி சிக்கன் லாலிபாப்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: true,
+          price: 200,
+          portion: '5 Pieces',
+          spiceLevel: 2,
+          image: 'images/saucy-chicken-lollipop.jpg',
+          desc: 'Crispy chicken lollipops generously coated in fiery sweet-spicy Indo-Chinese sauce.',
+          ingredients: ['Chicken Winglets', 'Chili Garlic Sauce', 'Spring Onions', 'Sesame'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-chettinadu-chicken',
+          name: 'Chettinadu Chicken',
+          tamil: 'செட்டிநாடு சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
           isVeg: false,
           isSignature: false,
           price: 190,
+          portion: 'Full Plate',
+          spiceLevel: 3,
+          image: 'images/chettinadu-chicken.jpg',
+          desc: 'Aromatic roasted masala chicken cooked with stone-flower (kalpasi), star anise and fresh curry leaves.',
+          ingredients: ['Chicken', 'Chettinad Masala', 'Black Pepper', 'Curry Leaves'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-chicken-manchurian',
+          name: 'Chicken Manchurian',
+          tamil: 'சிக்கன் மஞ்சூரியன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/chicken-manchurian.jpg',
+          desc: 'Golden fried chicken chunks tossed in savory garlic-coriander dark soy sauce.',
+          ingredients: ['Chicken', 'Dark Soy', 'Garlic', 'Green Chilies', 'Spring Onion'],
+          allergens: ['100% Halal', 'Contains Soy']
+        },
+        {
+          id: 'dish-chilli-chicken',
+          name: 'Chilli Chicken',
+          tamil: 'சில்லி சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: true,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/chilli-chicken.jpg',
+          desc: 'Classic Indo-Chinese diced chicken wok-tossed with capsicum, onions, and hot chili glaze.',
+          ingredients: ['Chicken', 'Green Bell Peppers', 'Onions', 'Chili Sauce'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-honey-chilli-chicken',
+          name: 'Crispy Honey Chilli Chicken',
+          tamil: 'ஹனி சில்லி சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/honey-chilli-chicken.jpg',
+          desc: 'Crispy shredded chicken glazed in sweet honey with a fiery chili kick and toasted sesame.',
+          ingredients: ['Chicken Strips', 'Pure Honey', 'Chili Flakes', 'Sesame'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-dragon-chicken',
+          name: 'Dragon Chicken',
+          tamil: 'டிராகன் சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: true,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 3,
+          image: 'images/dragon-chicken.jpg',
+          desc: 'Crispy chicken strips tossed in spicy red dragon sauce with crunchy roasted cashew nuts.',
+          ingredients: ['Chicken Strips', 'Cashew Nuts', 'Red Chili Paste', 'Capsicum'],
+          allergens: ['100% Halal', 'Contains Nuts']
+        },
+        {
+          id: 'dish-garlic-chicken',
+          name: 'Garlic Chicken',
+          tamil: 'கார்லிக் சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/garlic-chicken.jpg',
+          desc: 'Tender chicken tossed in a deeply aromatic roasted golden garlic and green chili sauce.',
+          ingredients: ['Chicken', 'Roasted Garlic', 'Green Chilies', 'Spring Onions'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-ginger-chicken',
+          name: 'Ginger Chicken',
+          tamil: 'இஞ்சி சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/ginger-chicken.jpg',
+          desc: 'Chicken pieces stir-fried with julienned fresh ginger root, onions and dark pepper sauce.',
+          ingredients: ['Chicken', 'Fresh Ginger', 'Onions', 'Pepper Sauce'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-japan-chicken',
+          name: 'Japan Chicken',
+          tamil: 'ஜப்பான் சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 1,
+          image: 'images/japan-chicken.jpg',
+          desc: 'Mild, sweet and savory glazed chicken cooked in creamy Japanese-style butter sauce.',
+          ingredients: ['Chicken', 'Butter Glaze', 'Cashews', 'Mild Spices'],
+          allergens: ['100% Halal', 'Contains Dairy']
+        },
+        {
+          id: 'dish-kakinada-chicken',
+          name: 'Kakinada Chicken',
+          tamil: 'காக்கிநாடா சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: true,
+          price: 200,
+          portion: 'Full Plate',
+          spiceLevel: 3,
+          image: 'images/kakinada-chicken.jpg',
+          desc: 'Fiery Andhra coastal recipe with Guntur red chilies, roasted coriander and curry leaves.',
+          ingredients: ['Chicken', 'Guntur Red Chili', 'Coriander Seeds', 'Curry Leaves'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-lemon-chicken',
+          name: 'Lemon Chicken',
+          tamil: 'லெமன் சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 1,
+          image: 'images/lemon-chicken.jpg',
+          desc: 'Tangy and zesty chicken pieces tossed with freshly squeezed lemon juice and mild spices.',
+          ingredients: ['Chicken', 'Fresh Lemon Juice', 'Ginger-Garlic', 'Curry Leaves'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-lemon-pepper-chicken',
+          name: 'Lemon Pepper Chicken',
+          tamil: 'லெமன் பெப்பர் சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: false,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/lemon-pepper-chicken.jpg',
+          desc: 'Crispy chicken cubes tossed with crushed black peppercorns and tangy lemon zest.',
+          ingredients: ['Chicken', 'Crushed Black Pepper', 'Lemon Zest', 'Garlic'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-pepper-chicken',
+          name: 'Salt and Pepper Chicken',
+          tamil: 'பெப்பர் சிக்கன்',
+          category: 'Starters (Veg & Non-Veg)',
+          isVeg: false,
+          isSignature: true,
+          price: 180,
+          portion: 'Full Plate',
+          spiceLevel: 3,
+          image: 'images/pepper-chicken.jpg',
+          desc: 'Pan-fried boneless chicken tossed with sea salt, Tellicherry black pepper and crispy shallots.',
+          ingredients: ['Chicken', 'Tellicherry Black Pepper', 'Shallots', 'Curry Leaves'],
+          allergens: ['100% Halal']
+        }
+      ]
+    },
+
+    {
+      id: 'cat-biriyani',
+      categoryName: 'Biriyani Specials',
+      categorySubtitle: 'Slow-cooked woodfire dum biriyani with fragrant rice, egg & signature meat combos',
+      items: [
+        {
+          id: 'dish-chicken-biryani',
+          name: 'Chicken Biryani',
+          tamil: 'சிக்கன் பிரியாணி',
+          category: 'Biriyani Specials',
+          isVeg: false,
+          isSignature: true,
+          price: 160,
+          portion: 'Regular (Serves 1)',
+          spiceLevel: 2,
+          image: 'images/chicken-biryani.jpg',
+          desc: 'Tender farm chicken pieces dum-cooked with fragrant Seeraga Samba rice, cow ghee, mint and aromatic spices.',
+          ingredients: ['Chicken', 'Seeraga Samba Rice', 'Pure Ghee', 'Curd', 'Mint & Spices'],
+          allergens: ['100% Halal', 'Gluten Free']
+        },
+        {
+          id: 'dish-egg-biriyani',
+          name: 'Egg Biriyani',
+          tamil: 'முட்டை பிரியாணி',
+          category: 'Biriyani Specials',
+          isVeg: false,
+          isSignature: false,
+          price: 120,
           portion: 'Regular (Serves 1)',
           spiceLevel: 2,
           image: 'images/egg-biryani.jpg',
-          desc: 'Two farm eggs pan-crisped in biryani gravy spices, nested in rich firewood-simmered dum rice.',
-          story: 'Golden scored eggs pan-roasted in clarified butter with Kashmiri chili powder, then slow-steamed with biryani rice so flavors permeate the yolks.',
-          ingredients: ['Farm Fresh Eggs', 'Seeraga Samba Dum Rice', 'Caramelized Onions', 'Cumin & Coriander'],
-          allergens: ['Contains Egg', 'Gluten Free'],
-          pairing: 'Served with onion raita & spicy brinjal gravy.'
+          desc: 'Golden pan-roasted farm eggs served over fragrant firewood dum-simmered biryani rice.',
+          ingredients: ['Farm Eggs', 'Dum Biryani Rice', 'Caramelized Shallots', 'Ghee'],
+          allergens: ['Contains Egg', 'Gluten Free']
         },
         {
-          id: 'dish-paneer-dum',
-          name: 'Shahi Malai Paneer Dum Biryani',
-          tamil: 'शाही பன்னீர் தம் பிரியாணி',
-          category: 'Dum Biryani Specials',
-          isVeg: true,
-          isSignature: false,
-          price: 230,
-          portion: 'Regular (Serves 1-2)',
-          spiceLevel: 1,
-          image: 'images/paneer-biryani.jpg',
-          desc: 'Fresh farm malai paneer and button mushrooms slow-steamed with saffron strands, whole spices, and mint.',
-          story: 'Cooked in a dedicated vegetarian degh. Soft paneer cubes are marinated with hung curd, crushed royal cumin, and green herbs.',
-          ingredients: ['Malai Paneer', 'Button Mushrooms', 'Aromatic Rice', 'Saffron', 'Pure Ghee', 'Fresh Mint'],
-          allergens: ['Contains Dairy (Paneer/Ghee)', 'Vegetarian', 'Gluten Free'],
-          pairing: 'Served with mixed vegetable raita and mild mirchi ka salan.'
-        }
-      ]
-    },
-    {
-      id: 'cat-starters',
-      categoryName: 'Starters & Tandoor',
-      categorySubtitle: 'Charred, crisp, and wok-tossed appetizers infused with coastal pepper and Arcot spices',
-      items: [
-        {
-          id: 'dish-mutton-sukka',
-          name: 'Karumbur Mutton Pepper Sukka',
-          tamil: 'கரும்பூர் மட்டன் சுக்கா வறுவல்',
-          category: 'Starters & Tandoor',
+          id: 'dish-plain-biriyani',
+          name: 'Plain Biriyani (Kuska)',
+          tamil: 'குஸ்கா / பிளைன் பிரியாணி',
+          category: 'Biriyani Specials',
           isVeg: false,
-          isSignature: true,
-          price: 320,
-          portion: 'Platter (Serves 1-2)',
-          spiceLevel: 3,
-          image: 'images/mutton-sukka.jpg',
-          desc: 'Tender baby mutton pieces pan-roasted dry in an iron skillet with crushed tellicherry peppercorns, shallots, and curry leaves.',
-          story: 'A South Indian heritage staple. Cooked slowly in its own juices until the aromatic spice masala clings dark and glossy to every bite.',
-          ingredients: ['Mutton Chops', 'Cracked Black Pepper', 'Small Shallots', 'Curry Leaves', 'Ginger-Garlic'],
-          allergens: ['Gluten Free', 'Nut Free', '100% Halal'],
-          pairing: 'Ideal starter before Dum Biryani, or paired with hot parottas.'
-        },
-        {
-          id: 'dish-chicken-65',
-          name: 'Arcot Heritage Chicken 65',
-          tamil: 'ஆற்காடு சிக்கன் 65',
-          category: 'Starters & Tandoor',
-          isVeg: false,
-          isSignature: true,
-          price: 220,
-          portion: 'Crispy Cut (Serves 1-2)',
-          spiceLevel: 2,
-          image: 'images/chicken-65.jpg',
-          desc: 'Boneless chicken cubes crisp-fried with crushed garlic, roasted cumin, Kashmiri chili, and crackling curry leaves.',
-          story: 'Authentic Madras recipe without synthetic red coloring. The bright color comes entirely from stone-ground Byadagi and Kashmiri chilies.',
-          ingredients: ['Boneless Chicken', 'Curry Leaves', 'Crushed Garlic', 'Kashmiri Chili', 'Lemon Juice'],
-          allergens: ['Gluten Free', 'Egg Used for Coating', '100% Halal'],
-          pairing: 'Served with onion rings and fresh lemon wedge.'
-        },
-        {
-          id: 'dish-prawn-roast',
-          name: 'Coromandel Prawns Thokku Roast',
-          tamil: 'காரைக்குடி இறால் தொக்கு வறுவல்',
-          category: 'Starters & Tandoor',
-          isVeg: false,
-          isSignature: false,
-          price: 380,
-          portion: 'Catch of the Day (Serves 1-2)',
-          spiceLevel: 3,
-          image: 'images/prawn-roast.jpg',
-          desc: 'Wild sea prawns tossed in thick tomato-shallot reduction, fennel powder, and coarse black pepper.',
-          story: 'Freshly sourced coastal prawns flash-sautéed at high heat to retain delicate crunch and burst of marine sweetness.',
-          ingredients: ['Bay of Bengal Prawns', 'Shallots', 'Country Tomatoes', 'Fennel Seeds', 'Pepper'],
-          allergens: ['Shellfish / Crustacean', 'Gluten Free'],
-          pairing: 'Pairs exceptionally well with Ghee Rice or Coin Parotta.'
-        },
-        {
-          id: 'dish-paneer-ghee-roast',
-          name: 'Ghee Roast Paneer Bites',
-          tamil: 'நெய் ரோஸ்ட் பன்னீர்',
-          category: 'Starters & Tandoor',
-          isVeg: true,
-          isSignature: false,
-          price: 210,
-          portion: 'Plate (Serves 1-2)',
-          spiceLevel: 2,
-          image: 'images/paneer-ghee-roast.jpg',
-          desc: 'Fresh artisanal cottage cheese tossed in Kundapur-style slow-roasted red chili paste and pure golden ghee.',
-          story: 'Whole dried red chilies and coriander seeds roasted in pure ghee and stone-ground into a velvety, fiery paste.',
-          ingredients: ['Cottage Cheese (Paneer)', 'Pure Cow Ghee', 'Red Chili Paste', 'Curry Leaves', 'Tamarind'],
-          allergens: ['Contains Dairy', 'Vegetarian', 'Gluten Free'],
-          pairing: 'Served with mint chutney and pickled onions.'
-        }
-      ]
-    },
-    {
-      id: 'cat-curries',
-      categoryName: 'Curries & Dalcha',
-      categorySubtitle: 'Rich slow-simmered gravies, traditional tamarind dalcha, and aromatic royal gravies',
-      items: [
-        {
-          id: 'dish-dalcha-brinjal',
-          name: 'Traditional Karumbur Dalcha',
-          tamil: 'பாரம்பரிய கத்தரிக்காய் தால்சா',
-          category: 'Curries & Dalcha',
-          isVeg: true,
-          isSignature: true,
-          price: 120,
-          portion: 'Bowl (Serves 1-2)',
-          spiceLevel: 1,
-          image: 'images/dalcha.jpg',
-          desc: 'The soulmate of Karumbur biryani. Country brinjals and chana dal simmered with raw tamarind, mint, and woodfire broth.',
-          story: 'Slow-simmered in deghs adjacent to biryani pots. Its pleasant sour and savory notes balance the richness of spiced ghee rice.',
-          ingredients: ['Country Brinjal', 'Chana Dal', 'Tamarind Pulp', 'Mint Leaves', 'Cumin & Mustard'],
-          allergens: ['Vegetarian', 'Gluten Free', 'Nut Free'],
-          pairing: 'Essential accompaniment with Mutton or Chicken Dum Biryani.'
-        },
-        {
-          id: 'dish-mutton-gravy',
-          name: 'Chettinad Mutton Pepper Curry',
-          tamil: 'செட்டிநாடு மட்டன் மிளகு கறி',
-          category: 'Curries & Dalcha',
-          isVeg: false,
-          isSignature: false,
-          price: 340,
-          portion: 'Handi (Serves 1-2)',
-          spiceLevel: 3,
-          image: 'images/mutton-curry.jpg',
-          desc: 'Robust roasted spice gravy with stone-flower (kalpasi), star anise, coarse black pepper, and tender mutton chunks.',
-          story: 'Spices are dry-roasted on cast iron tawa until nutty, then ground fresh with grated coconut and shallots.',
-          ingredients: ['Grass-fed Mutton', 'Stone Flower (Kalpasi)', 'Black Pepper', 'Coconut Milk', 'Shallots'],
-          allergens: ['Gluten Free', 'Contains Coconut', '100% Halal'],
-          pairing: 'Splendid with Bun Parotta or Malabar Coin Parotta.'
-        },
-        {
-          id: 'dish-butter-chicken',
-          name: 'Dilli Nawabi Butter Chicken',
-          tamil: 'தில்லி நவாபி பட்டர் சிக்கன்',
-          category: 'Curries & Dalcha',
-          isVeg: false,
-          isSignature: false,
-          price: 270,
-          portion: 'Handi (Serves 1-2)',
-          spiceLevel: 1,
-          image: 'images/butter-chicken.jpg',
-          desc: 'Smoked tandoori chicken tikka simmered in silky makhani gravy with butter, cashews, and sun-dried fenugreek leaves.',
-          story: 'Chicken thighs are roasted in clay tandoor until lightly charred, then finished in velvety sun-ripened tomato coulis.',
-          ingredients: ['Tandoori Chicken', 'Cream & Butter', 'Cashew Paste', 'Kasturi Methi', 'Tomatoes'],
-          allergens: ['Contains Dairy', 'Contains Tree Nuts (Cashew)', '100% Halal'],
-          pairing: 'Pairs perfectly with Butter Naan or Garlic Kulcha.'
-        }
-      ]
-    },
-    {
-      id: 'cat-breads',
-      categoryName: 'Parottas & Breads',
-      categorySubtitle: 'Golden flaky parottas, Madurai bun parottas, and clay tandoor baked breads',
-      items: [
-        {
-          id: 'dish-coin-parotta',
-          name: 'Malabar Coin Parotta (2 pcs)',
-          tamil: 'மலபார் காயின் பரோட்டா',
-          category: 'Parottas & Breads',
-          isVeg: true,
-          isSignature: true,
-          price: 70,
-          portion: '2 Pieces',
-          spiceLevel: 0,
-          image: 'images/coin-parotta.jpg',
-          desc: 'Flaky, buttery, multi-layered flatbread crushed by hand while sizzling hot to fluff up layers.',
-          story: 'Kneaded with cow milk and rested for 4 hours. Rolled into spiral discs and toasted golden on cast iron flat griddles.',
-          ingredients: ['Refined Flour', 'Pure Ghee', 'Fresh Milk', 'Sea Salt'],
-          allergens: ['Contains Wheat / Gluten', 'Contains Dairy'],
-          pairing: 'Dip into hot Mutton Sukka or Dalcha gravy.'
-        },
-        {
-          id: 'dish-bun-parotta',
-          name: 'Madurai Bun Parotta (2 pcs)',
-          tamil: 'மதுரை பன் பரோட்டா',
-          category: 'Parottas & Breads',
-          isVeg: true,
-          isSignature: false,
-          price: 90,
-          portion: '2 Pieces',
-          spiceLevel: 0,
-          image: 'images/bun-parotta.jpg',
-          desc: 'Crispy round pillow of buttery layers, golden crunchy outside with soft airy bread inside.',
-          story: 'Famous southern street legend. The dough is folded dozens of times and shallow-fried in clarified butter.',
-          ingredients: ['Flour', 'Butter', 'Semolina', 'Sugar & Salt'],
-          allergens: ['Contains Wheat / Gluten', 'Contains Dairy'],
-          pairing: 'Best enjoyed crushed with thick Chettinad Pepper Curry.'
-        },
-        {
-          id: 'dish-butter-naan',
-          name: 'Tandoori Butter Naan',
-          tamil: 'தந்தூரி பட்டர் நான்',
-          category: 'Parottas & Breads',
-          isVeg: true,
-          isSignature: false,
-          price: 60,
-          portion: '1 Large Naan (Cut in 2)',
-          spiceLevel: 0,
-          image: 'images/butter-naan.jpg',
-          desc: 'Classic clay-oven flatbread charred over open coal tandoor, brushed with warm farmhouse butter.',
-          story: 'Baked by slapping onto 400°C clay tandoor walls, acquiring signature blistering and pillowy softness.',
-          ingredients: ['Flour', 'Yogurt', 'Baking Butter', 'Nigella Seeds'],
-          allergens: ['Contains Wheat / Gluten', 'Contains Dairy'],
-          pairing: 'Accompanies our rich curries and gravies.'
-        }
-      ]
-    },
-    {
-      id: 'cat-desserts',
-      categoryName: 'Mithai & Desserts',
-      categorySubtitle: 'Traditional royal South Indian sweets, tender coconut payasam, and slow-churned kulfi',
-      items: [
-        {
-          id: 'dish-elaneer-payasam',
-          name: 'Chilled Elaneer Payasam',
-          tamil: 'குளிர்ந்த இளநீர் பாயாசம்',
-          category: 'Mithai & Desserts',
-          isVeg: true,
-          isSignature: true,
-          price: 130,
-          portion: 'Glass (Serves 1)',
-          spiceLevel: 0,
-          image: 'images/elaneer-payasam.jpg',
-          desc: 'Refreshing sweet delight made with tender coconut water, tender coconut jelly pulp, condensed milk, and cardamom.',
-          story: 'Made from hand-picked Pollachi tender coconuts. The tender meat is blended with reduced milk and chilled to soothe the palate after biryani.',
-          ingredients: ['Tender Coconut Pulp & Water', 'Reduced Milk', 'Cardamom', 'Kewra Essence'],
-          allergens: ['Contains Dairy', 'Gluten Free', 'Vegetarian'],
-          pairing: 'The ideal sweet finale after a hearty Karumbur biryani meal.'
-        },
-        {
-          id: 'dish-shahi-tukda',
-          name: 'Royal Arcot Shahi Tukda',
-          tamil: 'ராயல் ஷாஹி துக்டா',
-          category: 'Mithai & Desserts',
-          isVeg: true,
-          isSignature: false,
-          price: 120,
-          portion: '2 Portions',
-          spiceLevel: 0,
-          image: 'images/shahi-tukda.jpg',
-          desc: 'Crisp ghee-fried bread triangles soaked in saffron sugar syrup, blanketed in thick almond-pistachio rabri.',
-          story: 'A classic Nawabi dessert served at royal Tamil banquets. Fragrant with green cardamom, silver leaf, and rose water.',
-          ingredients: ['Bread', 'A2 Ghee', 'Reduced Rabri Milk', 'Pistachio', 'Almonds', 'Saffron'],
-          allergens: ['Contains Wheat / Gluten', 'Contains Dairy', 'Contains Tree Nuts'],
-          pairing: 'Best served warm alongside chilled kulfi.'
-        },
-        {
-          id: 'dish-matka-kulfi',
-          name: 'Earthen Pot Malai Kulfi',
-          tamil: 'மட்கா மலாய் குல்பி',
-          category: 'Mithai & Desserts',
-          isVeg: true,
           isSignature: false,
           price: 110,
-          portion: '1 Clay Matka',
-          spiceLevel: 0,
-          image: 'images/matka-kulfi.jpg',
-          desc: 'Traditional slow-condensed buffalo milk kulfi set in porous clay pot with crushed pistachios and saffron.',
-          story: 'Simmered in huge open pans for 5 hours until caramelized, then frozen naturally inside earthen vessels.',
-          ingredients: ['Whole Milk', 'Pistachios', 'Cardamom Powder', 'Cane Sugar', 'Saffron'],
-          allergens: ['Contains Dairy', 'Contains Tree Nuts', 'Vegetarian'],
-          pairing: 'Rich, dense, and authentic dessert.'
+          portion: 'Regular (Serves 1)',
+          spiceLevel: 2,
+          image: 'images/plain-biryani.jpg',
+          desc: 'Aromatic Seeraga Samba dum rice slow-cooked in rich meat broth, pure ghee and whole spices.',
+          ingredients: ['Seeraga Samba Rice', 'Rich Biryani Broth', 'Pure Ghee', 'Whole Spices'],
+          allergens: ['100% Halal', 'Gluten Free']
+        },
+        {
+          id: 'dish-biriyani-65-combo',
+          name: 'Plain Biriyani with 65 (3 Pcs)',
+          tamil: 'குஸ்கா வித் சிக்கன் 65 (3 துண்டுகள்)',
+          category: 'Biriyani Specials',
+          isVeg: false,
+          isSignature: true,
+          price: 170,
+          portion: 'Biryani + 3 Pcs Chicken 65',
+          spiceLevel: 2,
+          image: 'images/biryani-65-combo.jpg',
+          desc: 'Fragrant dum biryani rice served with 3 crispy boneless Chicken 65 pieces, dalcha & raita.',
+          ingredients: ['Dum Rice', '3 Pcs Chicken 65', 'Dalcha Gravy', 'Onion Raita'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-biriyani-lollipop-combo',
+          name: 'Plain Biriyani with Lollipop (2 Pcs)',
+          tamil: 'குஸ்கா வித் லாலிபாப் (2 துண்டுகள்)',
+          category: 'Biriyani Specials',
+          isVeg: false,
+          isSignature: true,
+          price: 170,
+          portion: 'Biryani + 2 Pcs Lollipop',
+          spiceLevel: 2,
+          image: 'images/biryani-lollipop-combo.jpg',
+          desc: 'Aromatic dum rice paired with 2 crispy golden fried Chicken Lollipops and sides.',
+          ingredients: ['Dum Rice', '2 Pcs Chicken Lollipop', 'Dalcha Gravy', 'Raita'],
+          allergens: ['100% Halal']
         }
       ]
     },
+
     {
-      id: 'cat-beverages',
-      categoryName: 'Traditional Refreshers',
-      categorySubtitle: 'Digestive herb coolers, floral essences, and brass-dabara filter coffee',
+      id: 'cat-chinese-combo',
+      categoryName: 'Chinese Combos',
+      categorySubtitle: 'Value meal combos: Choice of Rice/Noodles + Sizzling Gravy + Fresh Lemon Juice',
       items: [
+        // VEG COMBOS
         {
-          id: 'dish-nannari',
-          name: 'Nannari Sharbath with Basil Seeds',
-          tamil: 'நன்னாரி சர்பத் (சப்ஜா விதை)',
-          category: 'Traditional Refreshers',
-          isVeg: true,
-          isSignature: true,
-          price: 70,
-          portion: 'Tall Glass (300ml)',
-          spiceLevel: 0,
-          image: 'images/nannari-sharbath.jpg',
-          desc: 'Cooling wild sarsaparilla root extract infused with fresh lime juice, crushed ice, and blooming sabja seeds.',
-          story: 'Traditional Tamil Ayurvedic remedy known for natural cooling properties and aiding digestion after heavy feasts.',
-          ingredients: ['Nannari Root Syrup', 'Fresh Lime Juice', 'Basil (Sabja) Seeds', 'Spring Water'],
-          allergens: ['Vegan', 'Gluten Free', 'Nut Free'],
-          pairing: 'Sip before or during biryani meal.'
-        },
-        {
-          id: 'dish-rose-milk',
-          name: 'Heritage Chilled Rose Milk',
-          tamil: 'பாரம்பரிய ரோஸ் மில்க்',
-          category: 'Traditional Refreshers',
+          id: 'dish-combo-veg-gobi-manchurian',
+          name: 'Veg Rice/Noodles + Gobi Manchurian + Lemon Juice',
+          tamil: 'வெஜ் காம்போ (கோபி மஞ்சூரியன் + ஜூஸ்)',
+          category: 'Chinese Combos',
           isVeg: true,
           isSignature: false,
-          price: 70,
-          portion: 'Glass (300ml)',
-          spiceLevel: 0,
-          image: 'images/rose-milk.jpg',
-          desc: 'Cold sweetened milk infused with pure Damascus rose essence and crushed ice.',
-          story: 'Made the authentic cinema-theatre style of Tamil Nadu, soothing and fragrant.',
-          ingredients: ['Pasteurized Whole Milk', 'Rose Petal Essence', 'Cane Sugar'],
-          allergens: ['Contains Dairy', 'Vegetarian', 'Gluten Free'],
-          pairing: 'Popular dessert drink combination.'
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/veg-chinese-combo.jpg',
+          desc: 'Wok-tossed Veg Fried Rice or Noodles served with rich Gobi Manchurian and chilled Lemon Juice.',
+          ingredients: ['Fried Rice/Noodles', 'Gobi Manchurian', 'Fresh Lemon Juice'],
+          allergens: ['Vegetarian']
         },
         {
-          id: 'dish-degree-coffee',
-          name: 'Kumbakonam Degree Filter Coffee',
-          tamil: 'கும்பகோணம் டிகிரி காபி',
-          category: 'Traditional Refreshers',
+          id: 'dish-combo-veg-chilli-gobi',
+          name: 'Veg Rice/Noodles + Chilli Gobi + Lemon Juice',
+          tamil: 'வெஜ் காம்போ (சில்லி கோபி + ஜூஸ்)',
+          category: 'Chinese Combos',
+          isVeg: true,
+          isSignature: false,
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/veg-chinese-combo.jpg',
+          desc: 'Veg Rice or Hakka Noodles paired with spicy Chilli Gobi and refreshing chilled Lemon Juice.',
+          ingredients: ['Fried Rice/Noodles', 'Chilli Gobi', 'Lemon Juice'],
+          allergens: ['Vegetarian']
+        },
+        {
+          id: 'dish-combo-veg-paneer-manchurian',
+          name: 'Veg Rice/Noodles + Paneer Manchurian + Lemon Juice',
+          tamil: 'வெஜ் காம்போ (பன்னீர் மஞ்சூரியன் + ஜூஸ்)',
+          category: 'Chinese Combos',
+          isVeg: true,
+          isSignature: false,
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/veg-chinese-combo.jpg',
+          desc: 'Fried Rice or Noodles with succulent Paneer Manchurian and fresh citrus Lemon Juice.',
+          ingredients: ['Fried Rice/Noodles', 'Paneer Manchurian', 'Lemon Juice'],
+          allergens: ['Vegetarian', 'Contains Dairy']
+        },
+        {
+          id: 'dish-combo-veg-chilli-paneer',
+          name: 'Veg Rice/Noodles + Chilli Paneer + Lemon Juice',
+          tamil: 'வெஜ் காம்போ (சில்லி பன்னீர் + ஜூஸ்)',
+          category: 'Chinese Combos',
+          isVeg: true,
+          isSignature: true,
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/veg-chinese-combo.jpg',
+          desc: 'Wok-tossed Rice or Noodles accompanied by spicy Chilli Paneer gravy and Lemon Juice.',
+          ingredients: ['Fried Rice/Noodles', 'Chilli Paneer', 'Lemon Juice'],
+          allergens: ['Vegetarian', 'Contains Dairy']
+        },
+
+        // NON-VEG COMBOS
+        {
+          id: 'dish-combo-chicken-chilli',
+          name: 'Chicken Rice/Noodles + Chilli Chicken + Lemon Juice',
+          tamil: 'சிக்கன் காம்போ (சில்லி சிக்கன் + ஜூஸ்)',
+          category: 'Chinese Combos',
+          isVeg: false,
+          isSignature: true,
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/nonveg-chinese-combo.jpg',
+          desc: 'Egg-chicken Fried Rice or Noodles served with spicy Chilli Chicken gravy and Lemon Juice.',
+          ingredients: ['Chicken Fried Rice/Noodles', 'Chilli Chicken Gravy', 'Fresh Lemon Juice'],
+          allergens: ['100% Halal', 'Contains Egg']
+        },
+        {
+          id: 'dish-combo-chicken-manchurian',
+          name: 'Chicken Rice/Noodles + Chicken Manchurian + Lemon Juice',
+          tamil: 'சிக்கன் காம்போ (சிக்கன் மஞ்சூரியன் + ஜூஸ்)',
+          category: 'Chinese Combos',
+          isVeg: false,
+          isSignature: false,
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/nonveg-chinese-combo.jpg',
+          desc: 'Chicken Rice or Noodles accompanied by rich Chicken Manchurian gravy and Lemon Juice.',
+          ingredients: ['Chicken Rice/Noodles', 'Chicken Manchurian', 'Lemon Juice'],
+          allergens: ['100% Halal', 'Contains Soy']
+        },
+        {
+          id: 'dish-combo-chicken-garlic',
+          name: 'Chicken Rice/Noodles + Garlic Chicken + Lemon Juice',
+          tamil: 'சிக்கன் காம்போ (கார்லிக் சிக்கன் + ஜூஸ்)',
+          category: 'Chinese Combos',
+          isVeg: false,
+          isSignature: false,
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/nonveg-chinese-combo.jpg',
+          desc: 'Savory Chicken Fried Rice or Noodles paired with roasted Garlic Chicken and Lemon Juice.',
+          ingredients: ['Chicken Rice/Noodles', 'Garlic Chicken Gravy', 'Lemon Juice'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-combo-chicken-ginger',
+          name: 'Chicken Rice/Noodles + Ginger Chicken + Lemon Juice',
+          tamil: 'சிக்கன் காம்போ (இஞ்சி சிக்கன் + ஜூஸ்)',
+          category: 'Chinese Combos',
+          isVeg: false,
+          isSignature: false,
+          price: 250,
+          portion: 'Full Combo Meal',
+          spiceLevel: 2,
+          image: 'images/nonveg-chinese-combo.jpg',
+          desc: 'Chicken Fried Rice or Noodles paired with zesty Ginger Chicken gravy and Lemon Juice.',
+          ingredients: ['Chicken Rice/Noodles', 'Ginger Chicken Gravy', 'Lemon Juice'],
+          allergens: ['100% Halal']
+        },
+        {
+          id: 'dish-addon-egg',
+          name: 'Add on Egg (For Combos / Fried Rice)',
+          tamil: 'முட்டை கூடுதல்',
+          category: 'Chinese Combos',
+          isVeg: false,
+          isSignature: false,
+          price: 10,
+          portion: '1 Farm Egg',
+          spiceLevel: 0,
+          image: 'images/egg-dosa.jpg',
+          desc: 'Extra scrambled or sunny side farm egg added to any rice, noodle, or combo dish.',
+          ingredients: ['Farm Fresh Egg'],
+          allergens: ['Contains Egg']
+        }
+      ]
+    },
+
+    {
+      id: 'cat-parotta',
+      categoryName: 'Parotta Specials & Breads',
+      categorySubtitle: 'Flaky layered parottas, Madurai bun parotta, spicy kothu & stuffed lappa',
+      items: [
+        {
+          id: 'dish-chapati-set',
+          name: 'Chapati SET (2 pieces)',
+          tamil: 'சப்பாத்தி செட் (2 துண்டுகள்)',
+          category: 'Parotta Specials & Breads',
           isVeg: true,
           isSignature: false,
           price: 50,
-          portion: 'Served in Brass Dabara',
-          spiceLevel: 0,
-          image: 'images/degree-coffee.jpg',
-          desc: 'First-decoction dark chicory blend brewed in traditional drip filter, frothy with thick buffalo milk.',
-          story: 'Poured back and forth between traditional brass dabara and tumbler from arm\'s length to create aromatic frothy crema.',
-          ingredients: ['80:20 Plantation AA Coffee & Chicory', 'Boiled Pure Milk', 'Sugar'],
-          allergens: ['Contains Dairy', 'Vegetarian', 'Gluten Free'],
-          pairing: 'A comforting finish to any authentic meal.'
+          portion: '2 Pieces with Gravy',
+          spiceLevel: 1,
+          image: 'images/chapati-set.jpg',
+          desc: 'Soft, whole wheat tawa chapatis served hot with rich vegetable kurma and spicy salna.',
+          ingredients: ['Whole Wheat Flour', 'Curry Leaves', 'Kurma Gravy'],
+          allergens: ['Vegetarian', 'Contains Wheat']
+        },
+        {
+          id: 'dish-parotta-set',
+          name: 'Parotta SET (2 pieces)',
+          tamil: 'பரோட்டா செட் (2 துண்டுகள்)',
+          category: 'Parotta Specials & Breads',
+          isVeg: true,
+          isSignature: true,
+          price: 50,
+          portion: '2 Pieces with Salna',
+          spiceLevel: 2,
+          image: 'images/parotta-set.jpg',
+          desc: 'Golden flaky, hand-kneaded layered parottas crushed while hot, served with rich woodfire salna.',
+          ingredients: ['Flour', 'Clarified Butter', 'Spiced Salna Gravy'],
+          allergens: ['Vegetarian', 'Contains Wheat']
+        },
+        {
+          id: 'dish-bun-parotta',
+          name: 'Madurai Bun Parotta (per piece)',
+          tamil: 'மதுரை பன் பரோட்டா (1 துண்டு)',
+          category: 'Parotta Specials & Breads',
+          isVeg: true,
+          isSignature: true,
+          price: 35,
+          portion: '1 Bun Parotta',
+          spiceLevel: 1,
+          image: 'images/bun-parotta.jpg',
+          desc: 'Thick round pillow of buttery spiral layers, golden crispy on the outside and airy inside.',
+          ingredients: ['Fine Flour', 'Pure Ghee', 'Salna'],
+          allergens: ['Vegetarian', 'Contains Wheat']
+        },
+        {
+          id: 'dish-coin-salna-parotta',
+          name: 'Coin Salna Parotta',
+          tamil: 'காயின் சால்னா பரோட்டா',
+          category: 'Parotta Specials & Breads',
+          isVeg: true,
+          isSignature: false,
+          price: 120,
+          portion: 'Plate',
+          spiceLevel: 2,
+          image: 'images/coin-salna-parotta.jpg',
+          desc: 'Miniature coin-sized golden parottas soaked in flavorful chicken or veg salna gravy.',
+          ingredients: ['Coin Parottas', 'Rich Salna Gravy', 'Coriander'],
+          allergens: ['Contains Wheat']
+        },
+        {
+          id: 'dish-chilli-parotta',
+          name: 'Chilli Parotta',
+          tamil: 'சில்லி பரோட்டா',
+          category: 'Parotta Specials & Breads',
+          isVeg: true,
+          isSignature: true,
+          price: 130,
+          portion: 'Full Plate',
+          spiceLevel: 3,
+          image: 'images/chilli-parotta.jpg',
+          desc: 'Crispy parotta pieces tossed on a hot griddle with capsicum, shallots, and spicy chili sauce.',
+          ingredients: ['Shredded Parotta', 'Capsicum', 'Shallots', 'Chili Sauce'],
+          allergens: ['Vegetarian', 'Contains Wheat']
+        },
+        {
+          id: 'dish-kizhi-parotta',
+          name: 'Kizhi Parotta',
+          tamil: 'வாழை இலை கிழி பரோட்டா',
+          category: 'Parotta Specials & Breads',
+          isVeg: false,
+          isSignature: true,
+          price: 180,
+          portion: '1 Banana Leaf Bundle',
+          spiceLevel: 2,
+          image: 'images/kizhi-parotta.jpg',
+          desc: 'Parottas layered with succulent spiced chicken gravy, bundled in smoked banana leaf and tawa-steamed.',
+          ingredients: ['Parotta', 'Spiced Chicken Gravy', 'Banana Leaf', 'Ghee'],
+          allergens: ['100% Halal', 'Contains Wheat']
+        },
+        {
+          id: 'dish-egg-kothu-parotta',
+          name: 'Egg Kothu Parotta',
+          tamil: 'முட்டை கொத்து பரோட்டா',
+          category: 'Parotta Specials & Breads',
+          isVeg: false,
+          isSignature: false,
+          price: 120,
+          portion: 'Full Plate',
+          spiceLevel: 2,
+          image: 'images/egg-kothu-parotta.jpg',
+          desc: 'Shredded parotta minced on iron tawa with scrambled farm eggs, onions, green chilies and salna.',
+          ingredients: ['Shredded Parotta', 'Farm Eggs', 'Salna', 'Curry Leaves'],
+          allergens: ['Contains Egg', 'Contains Wheat']
+        },
+        {
+          id: 'dish-chicken-kothu-parotta',
+          name: 'Chicken Kothu Parotta',
+          tamil: 'சிக்கன் கொத்து பரோட்டா',
+          category: 'Parotta Specials & Breads',
+          isVeg: false,
+          isSignature: true,
+          price: 150,
+          portion: 'Full Plate',
+          spiceLevel: 3,
+          image: 'images/chicken-kothu-parotta.jpg',
+          desc: 'Finely chopped parotta clattered on high-heat tawa with boneless chicken pieces, eggs, and gravy.',
+          ingredients: ['Parotta', 'Tender Chicken', 'Eggs', 'Spicy Salna', 'Black Pepper'],
+          allergens: ['100% Halal', 'Contains Egg', 'Contains Wheat']
+        },
+        {
+          id: 'dish-egg-lappa',
+          name: 'Egg Lappa',
+          tamil: 'முட்டை லப்பா',
+          category: 'Parotta Specials & Breads',
+          isVeg: false,
+          isSignature: false,
+          price: 90,
+          portion: '1 Square Lappa',
+          spiceLevel: 2,
+          image: 'images/egg-lappa.jpg',
+          desc: 'Thin stretched veechu envelope stuffed with spiced beaten egg and shallow-fried in ghee.',
+          ingredients: ['Stretched Dough', 'Spiced Egg Mixture', 'Shallots', 'Ghee'],
+          allergens: ['Contains Egg', 'Contains Wheat']
+        },
+        {
+          id: 'dish-chicken-lappa',
+          name: 'Chicken Lappa',
+          tamil: 'சிக்கன் லப்பா',
+          category: 'Parotta Specials & Breads',
+          isVeg: false,
+          isSignature: true,
+          price: 150,
+          portion: '1 Square Lappa',
+          spiceLevel: 2,
+          image: 'images/chicken-lappa.jpg',
+          desc: 'Ceylon-style layered murtabak envelope packed with minced spiced chicken, eggs and onions.',
+          ingredients: ['Veechu Dough', 'Spiced Minced Chicken', 'Eggs', 'Ghee'],
+          allergens: ['100% Halal', 'Contains Egg', 'Contains Wheat']
+        },
+        {
+          id: 'dish-plain-veechu-parotta',
+          name: 'Plain Veechu Parotta',
+          tamil: 'வீச்சு பரோட்டா',
+          category: 'Parotta Specials & Breads',
+          isVeg: true,
+          isSignature: false,
+          price: 30,
+          portion: '1 Piece',
+          spiceLevel: 1,
+          image: 'images/veechu-parotta.jpg',
+          desc: 'Thin, airy, hand-spun stretched parotta folded into a square and cooked crisp on tawa.',
+          ingredients: ['Fine Flour', 'Ghee', 'Salna'],
+          allergens: ['Vegetarian', 'Contains Wheat']
+        },
+        {
+          id: 'dish-egg-veechu-parotta',
+          name: 'Egg Veechu Parotta',
+          tamil: 'முட்டை வீச்சு பரோட்டா',
+          category: 'Parotta Specials & Breads',
+          isVeg: false,
+          isSignature: false,
+          price: 50,
+          portion: '1 Piece',
+          spiceLevel: 2,
+          image: 'images/egg-veechu-parotta.jpg',
+          desc: 'Spun veechu parotta cooked with a layer of beaten spiced farm egg on top.',
+          ingredients: ['Veechu Parotta', 'Farm Egg', 'Curry Leaves'],
+          allergens: ['Contains Egg', 'Contains Wheat']
+        }
+      ]
+    },
+
+    {
+      id: 'cat-dosa',
+      categoryName: 'Dosa Varieties',
+      categorySubtitle: 'Crisp golden tawa roasts, spicy podi dosas, stuffed varieties & Madurai Kari Dosa',
+      items: [
+        // VEG DOSA
+        {
+          id: 'dish-plain-dosa',
+          name: 'Plain Dosa',
+          tamil: 'பிளைன் தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 50,
+          portion: '1 Dosa with Chutneys & Sambar',
+          spiceLevel: 1,
+          image: 'images/plain-dosa.jpg',
+          desc: 'Classic golden crispy fermented rice & lentil crepe cooked on cast-iron tawa.',
+          ingredients: ['Rice & Urad Dal Batter', 'Gingelly Oil'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-kal-dosa-set',
+          name: 'Kal Dosa SET (2 pieces)',
+          tamil: 'கல் தோசை செட் (2 துண்டுகள்)',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 50,
+          portion: '2 Soft Dosas',
+          spiceLevel: 1,
+          image: 'images/kal-dosa.jpg',
+          desc: 'Two thick, spongy, melt-in-mouth soft dosas cooked with gentle golden crust.',
+          ingredients: ['Fermented Batter', 'Chutneys', 'Tiffin Sambar'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-kal-nice-dosa',
+          name: 'Kal Nice Dosa',
+          tamil: 'கல் நைஸ் தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 35,
+          portion: '1 Piece',
+          spiceLevel: 1,
+          image: 'images/kal-nice-dosa.jpg',
+          desc: 'Thin, crispy yet tender tawa dosa served with assorted coconut & tomato chutneys.',
+          ingredients: ['Rice Batter', 'Chutneys'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-ghee-dosa',
+          name: 'Ghee Dosa',
+          tamil: 'நெய் தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: true,
+          price: 90,
+          portion: '1 Large Roast',
+          spiceLevel: 1,
+          image: 'images/ghee-dosa.jpg',
+          desc: 'Extra crispy paper-thin golden roast drenched in pure farm cow ghee.',
+          ingredients: ['Rice Batter', 'Pure Cow Ghee', 'Sambar & Chutneys'],
+          allergens: ['Vegetarian', 'Contains Dairy', 'Gluten Free']
+        },
+        {
+          id: 'dish-butter-dosa',
+          name: 'Butter Dosa',
+          tamil: 'பட்டர் தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 80,
+          portion: '1 Large Roast',
+          spiceLevel: 1,
+          image: 'images/butter-dosa.jpg',
+          desc: 'Crisp golden crepe roasted with a generous slab of melting salted farmhouse butter.',
+          ingredients: ['Rice Batter', 'Farm Butter', 'Chutneys'],
+          allergens: ['Vegetarian', 'Contains Dairy', 'Gluten Free']
+        },
+        {
+          id: 'dish-podi-dosa',
+          name: 'Podi Dosa',
+          tamil: 'பொடி தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: true,
+          price: 60,
+          portion: '1 Roast',
+          spiceLevel: 2,
+          image: 'images/podi-dosa.jpg',
+          desc: 'Crispy roast coated inside out with spicy roasted lentil gunpowder idli podi.',
+          ingredients: ['Batter', 'Roasted Lentil Podi', 'Sesame Oil'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-ghee-podi-dosa',
+          name: 'Ghee Podi Dosa',
+          tamil: 'நெய் பொடி தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: true,
+          price: 100,
+          portion: '1 Large Roast',
+          spiceLevel: 2,
+          image: 'images/ghee-podi-dosa.jpg',
+          desc: 'The ultimate royal combination: pure cow ghee roasted dosa sprinkled with fiery spicy podi.',
+          ingredients: ['Batter', 'Pure Cow Ghee', 'House Gunpowder Podi'],
+          allergens: ['Vegetarian', 'Contains Dairy', 'Gluten Free']
+        },
+        {
+          id: 'dish-butter-podi-dosa',
+          name: 'Butter Podi Dosa',
+          tamil: 'பட்டர் பொடி தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 90,
+          portion: '1 Large Roast',
+          spiceLevel: 2,
+          image: 'images/butter-podi-dosa.jpg',
+          desc: 'Creamy melted butter mixed with spicy gunpowder podi spread over a crispy dosa.',
+          ingredients: ['Batter', 'Butter', 'Idli Podi'],
+          allergens: ['Vegetarian', 'Contains Dairy', 'Gluten Free']
+        },
+        {
+          id: 'dish-garlic-dosa',
+          name: 'Garlic Dosa',
+          tamil: 'பூண்டு தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 80,
+          portion: '1 Roast',
+          spiceLevel: 2,
+          image: 'images/garlic-dosa.jpg',
+          desc: 'Golden roast spread with house-ground spicy roasted garlic paste.',
+          ingredients: ['Batter', 'Spiced Garlic Paste', 'Gingelly Oil'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-butter-garlic-dosa',
+          name: 'Butter Garlic Dosa',
+          tamil: 'பட்டர் பூண்டு தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 90,
+          portion: '1 Roast',
+          spiceLevel: 2,
+          image: 'images/butter-garlic-dosa.jpg',
+          desc: 'Crispy roast layered with rich melting butter and aromatic roasted garlic chutney.',
+          ingredients: ['Batter', 'Butter', 'Garlic Chutney'],
+          allergens: ['Vegetarian', 'Contains Dairy', 'Gluten Free']
+        },
+        {
+          id: 'dish-onion-dosa',
+          name: 'Onion Dosa',
+          tamil: 'வெங்காய தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 70,
+          portion: '1 Roast',
+          spiceLevel: 1,
+          image: 'images/onion-dosa.jpg',
+          desc: 'Crispy crepe studded with finely chopped caramelized shallots, green chilies and coriander.',
+          ingredients: ['Batter', 'Finely Diced Onions', 'Coriander', 'Green Chilies'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-onion-podi-dosa',
+          name: 'Onion Podi Dosa',
+          tamil: 'வெங்காய பொடி தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 80,
+          portion: '1 Roast',
+          spiceLevel: 2,
+          image: 'images/onion-podi-dosa.jpg',
+          desc: 'Crisp dosa loaded with crunchy caramelized onions and spicy gunpowder podi.',
+          ingredients: ['Batter', 'Onions', 'Lentil Podi', 'Ghee'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-onion-uthappam',
+          name: 'Onion Uthappam',
+          tamil: 'வெங்காய ஊத்தப்பம்',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 60,
+          portion: '1 Thick Uthappam',
+          spiceLevel: 1,
+          image: 'images/onion-uthappam.jpg',
+          desc: 'Thick, fluffy tawa pancake topped generously with caramelized onions, green chilies, and curry leaves.',
+          ingredients: ['Fermented Batter', 'Shallots', 'Green Chilies', 'Curry Leaves'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-gobi-dosa',
+          name: 'Gobi Dosa',
+          tamil: 'கோபி தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 140,
+          portion: '1 Stuffed Roast',
+          spiceLevel: 2,
+          image: 'images/gobi-dosa.jpg',
+          desc: 'Crisp golden dosa stuffed with spicy, flavorful sauteed spiced cauliflower masala.',
+          ingredients: ['Batter', 'Spiced Gobi Masala', 'Onions', 'Chutneys'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+        {
+          id: 'dish-paneer-dosa',
+          name: 'Paneer Dosa',
+          tamil: 'பன்னீர் தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: true,
+          price: 150,
+          portion: '1 Stuffed Roast',
+          spiceLevel: 2,
+          image: 'images/paneer-dosa.jpg',
+          desc: 'Rich dosa filled with grated malai paneer cooked with onions, tomatoes and garam masala.',
+          ingredients: ['Batter', 'Grated Fresh Paneer', 'Butter', 'Spices'],
+          allergens: ['Vegetarian', 'Contains Dairy', 'Gluten Free']
+        },
+        {
+          id: 'dish-mushroom-dosa',
+          name: 'Mushroom Dosa',
+          tamil: 'காளான் தோசை',
+          category: 'Dosa Varieties',
+          isVeg: true,
+          isSignature: false,
+          price: 160,
+          portion: '1 Stuffed Roast',
+          spiceLevel: 2,
+          image: 'images/mushroom-dosa.jpg',
+          desc: 'Crispy roast stuffed with juicy, peppery pan-roasted mushroom masala.',
+          ingredients: ['Batter', 'Button Mushrooms', 'Pepper Masala', 'Onions'],
+          allergens: ['Vegetarian', 'Gluten Free']
+        },
+
+        // NON-VEG DOSA
+        {
+          id: 'dish-egg-dosa',
+          name: 'Egg Dosa',
+          tamil: 'முட்டை தோசை',
+          category: 'Dosa Varieties',
+          isVeg: false,
+          isSignature: true,
+          price: 60,
+          portion: '1 Dosa',
+          spiceLevel: 1,
+          image: 'images/egg-dosa.jpg',
+          desc: 'Hot tawa dosa spread with beaten spiced farm egg, black pepper and curry leaves.',
+          ingredients: ['Rice Batter', 'Farm Egg', 'Black Pepper', 'Salna'],
+          allergens: ['Contains Egg', 'Gluten Free']
+        },
+        {
+          id: 'dish-kal-egg-dosa',
+          name: 'Kal Egg Dosa',
+          tamil: 'கல் முட்டை தோசை',
+          category: 'Dosa Varieties',
+          isVeg: false,
+          isSignature: false,
+          price: 40,
+          portion: '1 Soft Egg Dosa',
+          spiceLevel: 1,
+          image: 'images/kal-egg-dosa.jpg',
+          desc: 'Thick spongy soft kal dosa layered with beaten egg and cooked to soft tenderness.',
+          ingredients: ['Soft Batter', 'Farm Egg', 'Pepper'],
+          allergens: ['Contains Egg', 'Gluten Free']
+        },
+        {
+          id: 'dish-kal-nice-egg-dosa',
+          name: 'Kal Nice Egg Dosa',
+          tamil: 'கல் நைஸ் முட்டை தோசை',
+          category: 'Dosa Varieties',
+          isVeg: false,
+          isSignature: false,
+          price: 50,
+          portion: '1 Piece',
+          spiceLevel: 1,
+          image: 'images/kal-nice-egg-dosa.jpg',
+          desc: 'Crispy thin kal dosa glazed with seasoned farm egg and shallow-fried golden.',
+          ingredients: ['Batter', 'Farm Egg', 'Ghee'],
+          allergens: ['Contains Egg', 'Gluten Free']
+        },
+        {
+          id: 'dish-chicken-kari-dosa',
+          name: 'Chicken Kari Dosa',
+          tamil: 'மதுரை சிக்கன் கறி தோசை',
+          category: 'Dosa Varieties',
+          isVeg: false,
+          isSignature: true,
+          price: 150,
+          portion: 'Signature 3-Layer Dosa',
+          spiceLevel: 3,
+          image: 'images/chicken-kari-dosa.jpg',
+          desc: 'Madurai legendary 3-layer dosa: thick dosa base, egg omlette layer, topped with spicy shredded chicken kari.',
+          ingredients: ['Dosa Batter', 'Egg Layer', 'Spicy Minced Chicken Kari', 'Ghee'],
+          allergens: ['100% Halal', 'Contains Egg']
         }
       ]
     }
@@ -458,7 +1206,7 @@
         header.className = 'category-header';
         header.innerHTML = `
           <div class="category-title-row">
-            <h2 class="category-title">${escapeHTML(cat.categoryName)}</h2>
+            <h2 class="category-title"><span class="category-ornament-mark">❖</span> ${escapeHTML(cat.categoryName)}</h2>
             <span class="category-count">${matchedItems.length} item${matchedItems.length > 1 ? 's' : ''}</span>
           </div>
           <p class="category-subtitle">${escapeHTML(cat.categorySubtitle)}</p>
@@ -489,7 +1237,7 @@
             <line x1="8" y1="11" x2="14" y2="11"/>
           </svg>
           <p class="empty-title">No Dishes Found</p>
-          <p class="empty-desc">No items match your search "${escapeHTML(searchQuery || activeFilter)}". Try clearing filters or searching for mutton, biryani, chicken, or dalcha.</p>
+          <p class="empty-desc">No items match your search "${escapeHTML(searchQuery || activeFilter)}". Try searching for parotta, dosa, biryani, chicken, paneer, or combo.</p>
           <button type="button" class="reset-search-link" id="resetSearchBtn">Reset Search & Filters</button>
         </div>
       `;
@@ -525,7 +1273,7 @@
 
     // Signature chip
     const sigChip = dish.isSignature 
-      ? `<span class="signature-chip">★ Chef's Special</span>` 
+      ? `<span class="signature-chip">★ Special</span>` 
       : '';
 
     card.innerHTML = `
@@ -544,7 +1292,7 @@
           <div class="price-container">
             <span class="currency-sym">₹</span>
             <span class="price-val">${dish.price}</span>
-            <span class="portion-tag">${dish.portion.split(' ')[0]}</span>
+            <span class="portion-tag">${escapeHTML(dish.portion)}</span>
           </div>
           ${spiceHtml}
         </div>
@@ -555,7 +1303,7 @@
           src="${escapeHTML(dish.image)}" 
           alt="${escapeHTML(dish.name)}" 
           class="card-food-img" 
-          loading="eager"
+          loading="lazy"
           decoding="async"
           onerror="this.style.opacity='0.3'; this.parentElement.style.backgroundColor='#EFE4D6';"
         >
@@ -601,48 +1349,7 @@
     });
   });
 
-  // --- SCROLLSPY & SMOOTH CATEGORY NAVIGATION ---
-  let observer = null;
-
-  function setupScrollSpy() {
-    if (observer) {
-      observer.disconnect();
-    }
-
-    const categorySections = document.querySelectorAll('.category-block');
-    if (categorySections.length === 0) return;
-
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.id;
-          highlightCategoryTab(sectionId);
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '-130px 0px -60% 0px',
-      threshold: 0
-    });
-
-    categorySections.forEach(section => observer.observe(section));
-  }
-
-  function highlightCategoryTab(targetId) {
-    categoryTabs.forEach(tab => {
-      const isCurrent = tab.getAttribute('href') === `#${targetId}`;
-      tab.classList.toggle('active', isCurrent);
-      if (isCurrent) {
-        // Smoothly scroll the tab into view in the horizontal nav track
-        tab.scrollIntoView({
-          behavior: 'smooth',
-          inline: 'center',
-          block: 'nearest'
-        });
-      }
-    });
-  }
-
+  // --- CATEGORY NAV CLICK HANDLER ---
   categoryTabs.forEach(tab => {
     tab.addEventListener('click', (e) => {
       e.preventDefault();
@@ -650,87 +1357,75 @@
       const targetSection = document.getElementById(targetId);
 
       if (targetSection) {
-        // Calculate offset position for sticky nav
-        const navOffset = 135;
-        const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-        const targetPos = targetSection.getBoundingClientRect().top + currentScroll - navOffset;
+        // If current search or filter hid this category, reset filters
+        if (searchQuery || activeFilter !== 'all') {
+          searchInput.value = '';
+          searchQuery = '';
+          clearSearchBtn.hidden = true;
+          setFilter('all');
+        }
 
-        window.scrollTo({
-          top: targetPos,
-          behavior: 'smooth'
-        });
-
-        highlightCategoryTab(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveCategoryTab(tab);
       }
     });
   });
 
-  // --- HORIZONTAL TRACK SCROLL ENHANCEMENTS (MOUSE DRAG & WHEEL) ---
-  function enhanceHorizontalScroll(elem) {
-    if (!elem) return;
-
-    // Mouse wheel horizontal scroll (desktop mouse users)
-    elem.addEventListener('wheel', (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        elem.scrollLeft += e.deltaY;
-      }
-    }, { passive: false });
-
-    // Drag-to-scroll with mouse
-    let isDown = false;
-    let startX = 0;
-    let scrollLeftPos = 0;
-
-    elem.addEventListener('mousedown', (e) => {
-      isDown = true;
-      elem.classList.add('dragging');
-      startX = e.pageX - elem.offsetLeft;
-      scrollLeftPos = elem.scrollLeft;
+  function setActiveCategoryTab(activeTab) {
+    categoryTabs.forEach(t => {
+      const isCurrent = t === activeTab;
+      t.classList.toggle('active', isCurrent);
+      t.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
     });
 
-    window.addEventListener('mouseup', () => {
-      if (isDown) {
-        isDown = false;
-        elem.classList.remove('dragging');
-      }
-    });
-
-    elem.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - elem.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      elem.scrollLeft = scrollLeftPos - walk;
-    });
+    // Auto horizontal scroll active tab into view
+    activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }
 
-  const categoryNavTrack = document.getElementById('categoryNavTrack');
-  const filterPillsRow = document.querySelector('.filter-pills-row');
-  enhanceHorizontalScroll(categoryNavTrack);
-  enhanceHorizontalScroll(filterPillsRow);
+  // --- SCROLLSPY OBSERVER ---
+  let scrollObserver = null;
+  function setupScrollSpy() {
+    if (scrollObserver) {
+      scrollObserver.disconnect();
+    }
+
+    const sections = document.querySelectorAll('.category-block');
+    if (sections.length === 0) return;
+
+    scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const catId = entry.target.id;
+          const matchingTab = document.querySelector(`.cat-nav-tab[href="#${catId}"]`);
+          if (matchingTab && !matchingTab.classList.contains('active')) {
+            setActiveCategoryTab(matchingTab);
+          }
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '-130px 0px -70% 0px',
+      threshold: 0.05
+    });
+
+    sections.forEach(s => scrollObserver.observe(s));
+  }
 
   // --- FLOATING BACK TO TOP BUTTON ---
   const floatingTopBtn = document.getElementById('floatingTopBtn');
-  if (floatingTopBtn) {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-      if (scrollY > 300) {
-        floatingTopBtn.classList.add('visible');
-      } else {
-        floatingTopBtn.classList.remove('visible');
-      }
-    }, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      floatingTopBtn.classList.add('visible');
+    } else {
+      floatingTopBtn.classList.remove('visible');
+    }
+  }, { passive: true });
 
-    floatingTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
+  floatingTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
-  // --- UTILITY ---
+  // --- UTILS ---
   function escapeHTML(str) {
     if (!str) return '';
     return String(str)
@@ -741,7 +1436,7 @@
       .replace(/'/g, '&#039;');
   }
 
-  // --- INITIALIZE ON DOM READY ---
+  // Initial Render
   renderMenu();
 
 })();
